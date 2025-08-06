@@ -301,6 +301,39 @@ section {
 
 
 /* some detailed of input of contact */
+.input-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.input-group input,
+.input-group textarea {
+  padding-left: 45px; /* enough space for icon */
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  background-color: #152536;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-group textarea {
+  resize: none;
+  padding-top: 12px;
+}
+
 
 
 
