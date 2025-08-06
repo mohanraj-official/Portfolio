@@ -78,23 +78,21 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <form action="https://formsubmit.co/mohanraj.official.2004@gmail.com" method="POST" id="contact-form">
+        <form action="https://formspree.io/f/mgvznbpk" method="POST" id="contact-form">
             <div class="input-group-row">
                 <label><i class="fas fa-user"></i></label>
                 <input type="text" name="name" placeholder="Your Full Name" required />
             </div>
-
             <div class="input-group-row">
                 <label><i class="fas fa-envelope"></i></label>
                 <input type="email" name="email" placeholder="Your Email Address" required />
             </div>
-
             <div class="input-group-row">
                 <label><i class="fas fa-comment"></i></label>
                 <textarea name="message" placeholder="Your Message" required></textarea>
             </div>
-
-            <button type="submit">Send</button>
+            <button type="submit" id="submitButton">Send</button>
+            <div id="responseMessage" style="display:none; margin-top:1rem;"></div>
         </form>
 
 

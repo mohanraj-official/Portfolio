@@ -45,3 +45,44 @@ const toggleBtn = document.getElementById('theme-toggle');
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
 });
+
+
+
+
+/*the for submission validation action */
+const form = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submitButton');
+const responseDiv = document.getElementById('responseMessage');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  const formData = new FormData(form);
+
+  try {
+    const resp = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    if (resp.ok) {
+      responseDiv.style.display = 'block';
+      responseDiv.textContent = '✅ Thank you! Message sent.';
+      form.reset();
+    } else {
+      const data = await resp.json();
+      responseDiv.style.display = 'block';
+      responseDiv.textContent = data.error || '⚠️ Something went wrong.';
+    }
+  } catch (err) {
+    responseDiv.style.display = 'block';
+    responseDiv.textContent = '❌ Error sending form.';
+  }
+
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Send';
+});

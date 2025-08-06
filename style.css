@@ -299,7 +299,7 @@ section {
   background-color: #0097a7;
 }
 
-/* nput style for contant*/
+/* input style for contant*/
 .input-group-row {
   display: flex;
   align-items: center;
@@ -326,6 +326,16 @@ section {
   font-size: 14px;
   outline: none;
 }
+/* response message from user for form action */
+#responseMessage {
+  color: #00bcd4;
+  font-size: 16px;
+}
+
+#responseMessage.error {
+  color: #ff6666;
+}
+
 
 
 
@@ -429,3 +439,5 @@ body.light-mode {
 body.light-mode nav {
   background-color: #ddd;
 }
+
+
