@@ -1,10 +1,9 @@
-// Toggle mobile nav
 const menuToggle = document.getElementById('menu-toggle');
-const nav = document.querySelector('nav ul');
+const navLinks = document.getElementById('nav-links');
 
-if (menuToggle && nav) {
+if (menuToggle && navLinks) {
   menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
+    navLinks.classList.toggle('active');
     menuToggle.classList.toggle('open');
   });
 
@@ -16,8 +15,7 @@ if (menuToggle && nav) {
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
       }
-      // Close nav on mobile
-      nav.classList.remove('active');
+      navLinks.classList.remove('active');
       menuToggle.classList.remove('open');
     });
   });

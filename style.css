@@ -61,7 +61,10 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
-/* Toggle Menu */
+
+
+
+/* Toggle Menu Style */
 #menu-toggle {
   display: none;
   flex-direction: column;
@@ -72,15 +75,21 @@ nav ul li a:hover::after {
 }
 
 #menu-toggle div {
-  width: 30px;
+  width: 25px;
   height: 3px;
   background-color: white;
-  transition: all 0.4s ease;
-  border-radius: 2px;
+  transition: 0.3s ease;
 }
 
 @media (max-width: 768px) {
-  nav ul {
+  #menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+
+  #nav-links {
     display: none;
     position: absolute;
     top: 60px;
@@ -92,28 +101,32 @@ nav ul li a:hover::after {
     padding: 15px;
   }
 
-  nav ul.active {
+  #nav-links.active {
     display: flex;
-  }
-
-  #menu-toggle {
-    display: flex;
-    position: absolute;
-    top: 15px;
-    right: 20px;
   }
 }
 
-/* Animate toggle to 'X' */
+/* Hamburger to X animation */
 #menu-toggle.open div:nth-child(1) {
   transform: rotate(45deg) translateY(8px);
 }
+
 #menu-toggle.open div:nth-child(2) {
   opacity: 0;
 }
+
 #menu-toggle.open div:nth-child(3) {
   transform: rotate(-45deg) translateY(-8px);
 }
+
+
+
+
+
+
+
+
+
 
 /* Hero Section */
 .hero-section {
