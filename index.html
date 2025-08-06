@@ -30,7 +30,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
+        </nav><button id="theme-toggle">Toggle Mode</button>
     </header>
 
     <section id="home" class="hero-section">
@@ -77,16 +77,20 @@
     </section>
 
     <section id="contact" class="contact-section fade-in">
-        <h2>Contact</h2>
-        <p>Email: mohanraj.official.2004@gmail.com</p>
-        <p>Location: Vellore, Tamil Nadu</p>
+        <h2>Contact Me</h2>
+        <form action="https://formsubmit.co/mohanraj.official.2004@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="How can i call you?" required>
+            <input type="email" name="email" placeholder="How can i reach you?" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+        </form>
     </section>
 
     <footer>
         <p>&copy; 2025 Mohanraj S. All rights reserved.</p>
     </footer>
 
-    
+
     <button id="scrollToTopBtn" title="Go to top">
         <i class="fas fa-arrow-up"></i>
     </button>
