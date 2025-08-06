@@ -27,11 +27,7 @@ if (menuToggle && navLinks) {
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    scrollToTopBtn.style.display = 'block';
-  } else {
-    scrollToTopBtn.style.display = 'none';
-  }
+  scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
 });
 
 scrollToTopBtn.addEventListener('click', () => {

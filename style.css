@@ -255,26 +255,37 @@ footer {
 }
 
 
+
+/* scroll to top */
 #scrollToTopBtn {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  display: none;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
   background-color: #00d9ff;
   color: black;
   border: none;
-  padding: 10px 15px;
-  font-size: 20px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: none;
+  animation: float 2s infinite;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 #scrollToTopBtn:hover {
   background-color: #0088aa;
   color: white;
+  transform: scale(1.1);
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
 }
 
 
