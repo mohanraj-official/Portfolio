@@ -93,10 +93,16 @@
                 <label><i class="fas fa-comment"></i></label>
                 <textarea name="message" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit">Send</button>
-            <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
 
+            <!-- 👇 Hidden fields to customize behavior -->
+            <input type="hidden" name="_subject" value="New message from your portfolio site!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_next" value="https://mohanraj.github.io/portfolio/thankyou.html">
+
+            <button type="submit">Send</button>
         </form>
+
     </section>
 
 
