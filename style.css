@@ -244,7 +244,8 @@ section {
 
 
 
-/* ---------- CONTACT SECTION ---------- */
+
+/* ---------- Contact Section ---------- */
 #contact {
   padding: 60px 20px;
   text-align: center;
@@ -274,6 +275,8 @@ section {
   outline: none;
   background-color: #122c44;
   color: white;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #contact-form textarea {
