@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        color: white;
+        background-color: black;
+        padding: 1px;
+    }
+
+
+
+    .container {
+        width: 100%;
+    }
+
+    .container .header {
+        color: rgb(255, 255, 255);
+        background-color: rgb(14, 13, 13);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .container .header a{
+        position: fixed;
+        padding: 10px;
+        color: #d68282;
+        background-color: rgb(41, 29, 29);
+        text-decoration: none;
+        left: 10px;
+        top: 10px;
+        border-radius: 10px;
+    }
+    .container .header a:hover{
+        transform: scale(1.05);
+        width: auto;
+        height: auto;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 3px 1px #db4545;
+
+    }
+    
+
+    .container .header h1 {
+        text-align: center;
+        font-size: 40px;
+        width: 450px;
+        padding: 14px;
+        border-radius: 12px;
+        background-color: rgb(22, 21, 21);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(180, 102, 102);
+
+    }
+
+    .container .header p {
+        padding: 13px;
+        color: rgb(82, 187, 108);
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+
+
+    /* ------------------------- link - NAVBAR ------------------*/
+    .container .navbar {
+        width: auto;
+        height: auto;
+        border-radius: 3px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+    }
+
+    .container .navbar ul {
+        height: auto;
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        background-color: rgb(26, 7, 7);
+        justify-content: space-around;
+        width: auto;
+    }
+
+    .container .navbar ul>li {
+        padding: 10px;
+        font-size: 17px;
+        height: auto;
+        font-family: 'Courier New', Courier, monospace;
+        width: auto;
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .container .navbar ul>li>a {
+        text-decoration: none;
+        color: rgb(218, 169, 169);
+    }
+
+    .container .navbar ul>li:hover {
+        background-color: #522323;
+        transform: scale(1.05);
+        transition: 0.2s ease;
+    }
+
+    /* --------------------------- MAin Container -----------------------*/
+
+
+    .full_container {
+        width: auto;
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 3px;
+        background-color: #0c0c0c;
+    }
+
+    .full_container .row_container {
+        background-color: #000000;
+        max-width: 98%;
+        padding: 10px;
+        margin-bottom: 30px;
+        border-radius: 7px;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+    .full_container .row_container .left {
+        min-width: 250px;
+        max-width: 250px;
+        height: auto;
+        padding: 10px;
+        border-radius: 7px;
+        flex: 1;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .full_container .row_container .left img {
+        width: 100%;
+        height: auto;
+        border-radius: 7px;
+        border: 1px solid #464545;
+
+    }
+
+    .full_container .row_container .right {
+        flex: 2;
+        background-color: #111111;
+        padding: 10px;
+        border-radius: 7px;
+        flex-direction: column;
+        display: flex;
+        width: 700px;
+    }
+
+    .full_container .row_container .right .right_head {
+        text-align: center;
+        padding: 3px;
+        margin-bottom: 10px;
+        background-color: #313030;
+        border-radius: 7px;
+        color: rgb(79, 223, 175);
+
+    }
+
+    .full_container .row_container .right .right_row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 25px;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        max-height: 140px;
+        border-radius: 7px;
+        background-color: #111111;
+    }
+
+    .full_container .row_container .right .right_row .right_col {
+        display: flex;
+        flex-direction: column;
+        width: 205px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #311313;
+        height: 120px;
+    }
+
+    .full_container .row_container .right .right_row .right_col h3 {
+        margin-bottom: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+        background-color: #200202;
+        padding: 5px;
+        border-radius: 4px;
+        color: rgb(189, 81, 81)
+    }
+
+    .full_container .row_container .right .right_row .right_col li {
+        letter-spacing: 1px;
+        line-height: 20px;
+        width: 95%;
+        text-align: left;
+        margin-left: 20px;
+        color: rgb(207, 162, 162);
+    }
+
+    .full_container .row_container .right .right_row .right_col p {
+        letter-spacing: 1px;
+        line-height: 20px;
+        width: 95%;
+        text-align: center;
+        color: rgb(207, 162, 162);
+    }
+
+    /* --------------------- SCrool Bar ---------------------*/
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #3a3a3a;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: black;
+    }
+
+    .navbar {
+        position: relative;
+        background-color: #f4f4f4;
+        z-index: 500;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar.sticky {
+        position: fixed;
+        top: -10px;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="header">
+                <a href="index.html">Home</a>
+                <h1><i class="fa-solid fa-user-secret"></i> Dexter's Stuffs</h1>
+                <p>"From Humble Beginnings to Unstoppable Growth"</p>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="#Technical">Technical</a></li>
+                    <li><a href="#Logical">Logical</a></li>
+                    <li><a href="#Interpersonal">Interpersonal</a></li>
+                    <li><a href="#Creative">Creative</a></li>
+                    <li><a href="#Physical">Physical</a></li>
+                    <li><a href="#Experience">Experience</a></li>
+                    <li><a href="#Hobbies">Hobbies</a></li>
+                    <li><a href="#Current">Current</a></li>
+                    <li><a href="#Goals">Goals</a></li>
+                    <li><a href="#Achievements">Achievements</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="full_container">
+                <div class="row_container" id="Technical">
+                    <div class="left">
+                        <img src="./assets/con1.jpg" alt="Image">
+                    </div>
+                    <div class="right">
+                        <div class="right_head">
+                            <h1>Technical Skills</h1>
+                        </div>
+                        <div class="right_row">
+                            <div class="right_col">
+                                <h3>Programming</h3>
+                                <p>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JAVA SCRIPT</li>
+                                    <li>PYTHON</li>
+                                </p>
+
+                            </div>
+                            <div class="right_col">
+                                <h3>Data Analysis</h3>
+                                <p>
+                                    Learning Data Science and Machine Learning
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Testing</h3>
+                                <p>
+                                    Preparing for Full Stack Testing in Python.
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Problem-Solving</h3>
+                                <p>
+                                    Solved 25+ problems on HackerRank
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row_container" id="Logical">
+                    <div class="left">
+                        <img src="./assets/con2.jpg" alt="Image">
+                    </div>
+                    <div class="right">
+                        <div class="right_head">
+                            <h1>Logical Skills</h1>
+                        </div>
+                        <div class="right_row">
+                            <div class="right_col">
+                                <h3>Aptitude</h3>
+                                <p>
+                                    Logical thinking and problem-solving
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Task Management</h3>
+                                <p>
+                                    I will provide task priority (Hard -> Easy)
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Logical Reasoning</h3>
+                                <p>
+                                    Eagarly to learn Data Structures and Algarithms
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row_container" id="Interpersonal">
+                    <div class="left">
+                        <img src="./assets/con3.jpg" alt="Image">
+                    </div>
+                    <div class="right">
+                        <div class="right_head">
+                            <h1>Interpersonal Skills</h1>
+                        </div>
+                        <div class="right_row">
+                            <div class="right_col">
+                                <h3>English Proficiency</h3>
+                                <p>
+                                    Good, reading books daily, working on fluent communication
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Hindi Proficiency</h3>
+                                <p>
+                                    <li>Prathamic</li>
+                                    <li>Madhyama</li>
+                                    <li>Rashtrabasha</li>
+                                    <li>Praveshika</li>
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Typing Ability</h3>
+                                <p>
+                                    Current speed of 50 WPM <br> practiced - "Typing Club" website.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row_container" id="Creative">
+                    <div class="left">
+                        <img src="./assets/con4.jpg" alt="Image">
+                    </div>
+                    <div class="right">
+                        <div class="right_head">
+                            <h1>Creative Skills</h1>
+                        </div>
+                        <div class="right_row">
+                            <div class="right_col">
+                                <h3>Origami </h3>
+                                <p>
+                                    Handcrafted home decorations and paper made crafts by own.
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Drawing </h3>
+                                <p>
+                                    Some experience with art and design as portrait picture.
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Gardening</h3>
+                                <p>
+                                    Home gardening as a creative and calming activity
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row_container" id="Physical">
+                    <div class="left">
+                        <img src="./assets/con5.jpg" alt="Image">
+                    </div>
+                    <div class="right">
+                        <div class="right_head">
+                            <h1>Physical Skill</h1>
+                        </div>
+                        <div class="right_row">
+                            <div class="right_col">
+                                <h3>Calisthenics</h3>
+                                <p>
+                                    <li>Handstand</li>
+                                    <li>Human Flag</li>
+                                    <li>L-Sit</li>
+                                    <li>Dragon Fly</li>
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Athletics</h3>
+                                <p>
+                                    <li>Swimming</li>
+                                    <li>sprinting</li>
+                                    <li>football</li>
+                                    <li>volleyball & Kabbadi</li>
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Meditation & Yoga</h3>
+                                <p>
+                                    <li>Astavakrasana</li>
+                                    <li>Yoganidrasana</li>
+                                    <li>Bakasana</li>
+                                    <li>Holasana</li>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row_container" id="Experience">
+                    <div class="left">
+                        <img src="./assets/con6.jpg" alt="Image">
+                    </div>
+                    <div class="right">
+                        <div class="right_head">
+                            <h1>Experience</h1>
+                        </div>
+                        <div class="right_row">
+                            <div class="right_col">
+                                <h3>Pharmacist</h3>
+                                <p>
+                                    2 years of experience in medical pharmacy
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Hotel Bill Counter</h3>
+                                <p>
+                                    Managed billing operations & Account closing.
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Catering</h3>
+                                <p>
+                                    6 months of catering Serivice Experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row_container" id="Hobbies">
+                    <div class="left">
+                        <img src="./assets/con7.jpg" alt="Image">
+                    </div>
+                    <div class="right">
+                        <div class="right_head">
+                            <h1>Hobbies and Interests</h1>
+                        </div>
+                        <div class="right_row">
+                            <div class="right_col">
+                                <h3>Diary Writing</h3>
+                                <p>
+                                    Consistent habit started on 26 NOV 2024.
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Music</h3>
+                                <p>
+                                    Listening to peaceful songs and rhythms
+                                </p>
+                            </div>
+                            <div class="right_col">
+                                <h3>Reading</h3>
+                                <p>
+                                    Hindi and English books with meaningful content
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navbar = document.querySelector(".navbar");
+            const offsetHeight = navbar.offsetHeight; // Get the height of the navbar
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > navbar.offsetTop) {
+                    navbar.classList.add("sticky");
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            });
+
+            // Adjust scroll position to account for navbar height
+            const links = document.querySelectorAll(".navbar a");
+
+            links.forEach(link => {
+                link.addEventListener("click", (event) => {
+                    event.preventDefault(); // Prevent default anchor behavior
+                    const targetId = link.getAttribute("href");
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const targetPosition = targetElement.offsetTop - offsetHeight; // Adjust for navbar height
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

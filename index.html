@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    html {
+        color: #00ace0;
+        background-color: #070F2B;
+    }
+
+    body {
+        font-family: 'Georgia', serif;
+        overflow-y: auto;
+    }
+
+
+    header {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h1 {
+        padding: 5px;
+        font-size: 45px;
+    }
+
+
+
+    .nav {
+        width: 46%;
+    }
+
+    .nav ul {
+        display: flex;
+    }
+
+    .nav ul li {
+        list-style-type: none;
+    }
+
+    .nav ul li a {
+        color: #00ace0;
+        padding: 15px;
+        text-align: right;
+        text-decoration: none;
+        letter-spacing: 2px;
+        margin-right: 20px;
+        display: flex;
+        position: relative;
+    }
+
+    .nav ul li a:hover {
+        transform: scale(1.10);
+        background-color: #081133;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+    }
+
+    .nav ul li a>i {
+        margin-right: 5px;
+        color: #05ffd5;
+    }
+
+    .nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #00ace0;
+        transition: width 0.4s ease;
+    }
+
+    .nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    .nav ul li .active.active::after {
+        width: 100%;
+    }
+
+
+
+
+    /* ----------------------------------- Main --------------------------------------------------------*/
+    main {
+        display: flex;
+        width: 99%;
+        margin: 0 auto;
+        height: 330px;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 6px;
+        position: absolute;
+    }
+
+
+    .resume {
+        display: flex;
+        width: 400px;
+        height: 250px;
+        margin: 5px;
+        padding: 7px;
+        margin-left: 70px;
+        border-radius: 17px;
+        position: relative;
+        background-color: #081133;
+        flex-direction: column;
+    }
+
+    .Domain {
+        width: 400px;
+        height: 120px;
+    }
+
+    .Domain h3 {
+        width: 170px;
+        background-color: #05175c;
+        padding: 6px;
+        border-radius: 7px;
+        margin: 5px;
+        float: left;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        color: #00ace0;
+    }
+
+    .Domain h3:hover {
+        background-color: #081d70;
+        transform: scale(1.03);
+        transition: transform 0.1s ease;
+    }
+
+    .resumesub a {
+        padding: 12px;
+        text-decoration: none;
+        color: #00ace0;
+        background-color: #05175c;
+        width: 100px;
+        height: 20px;
+        text-align: center;
+        border-radius: 12px;
+        position: absolute;
+        bottom: 15px;
+        border: 1px solid #427e91;
+
+    }
+
+    .resumesub a:hover {
+        background-color: #071b6b;
+        transform: scale(1.03);
+        transition: transform 0.3s ease;
+
+    }
+
+    .resumesub a i {
+        margin-right: 6px;
+    }
+
+    .resumesub p {
+        font-size: 20px;
+        letter-spacing: 2px;
+        margin-left: 10px;
+    }
+
+
+
+
+
+
+
+    .content {
+        border: 1px solid #071238;
+        width: 50%;
+        height: 74%;
+        position: relative;
+        right: 100px;
+        line-height: 30px;
+        padding: 10px;
+        background-color: #091235;
+        border-radius: 14px;
+
+    }
+
+    .content h1 {
+        padding: 10px;
+        text-align: left;
+        padding-left: 0;
+        margin-bottom: 10px;
+        color: #0681a7;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .content .name {
+        color: #00ace0;
+    }
+
+    .content h2 {
+        color: #05ffd5;
+        margin-bottom: 7px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+
+    .content p {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .content .quote {
+        color: #e6d013;
+    }
+
+    /* ---------------------------------------------- footer Section ---------------------------------------------*/
+    footer {
+        width: 99%;
+        position: absolute;
+        bottom: 0;
+        margin-left: 6px;
+        display: flex;
+        height: 33%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    footer .cols {
+        width: 22%;
+    }
+
+    footer .cols:hover {
+        transition: background-color 0.3s ease, border-radius 0.3s ease;
+        background-color: #091236;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+
+    }
+
+    footer .cols h2 {
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: #0f1d52;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: 1px solid #182e80;
+    }
+
+    footer .cols ul {
+        list-style-type: none;
+    }
+
+    footer .cols ul li {
+        padding: 5px;
+        width: 250px;
+        background-color: #091130;
+        text-align: center;
+        margin: 0 auto;
+        color: #05ffd5;
+        margin-top: 5px;
+        border: 1px solid #0f1d52;
+        border-radius: 8px;
+
+    }
+
+    footer .cols ul li:hover {
+        background-color: #05175c;
+        transition: background-color 0.3s ease, border-radius 0.3s ease;
+        transform: scale(1.03);
+        transition: transform 0.2s ease;
+    }
+
+    /* ---------------------------------------------------------------------------------- */
+
+    footer .col {
+        width: 22%;
+
+    }
+
+    footer .col:hover {
+        transition: background-color 0.3s ease, border-radius 0.3s ease;
+        background-color: #091236;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+
+    }
+
+    footer .col h2 {
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: #0f1d52;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: 1px solid #182e80;
+    }
+
+    footer .col ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+
+    footer .col ul li {
+        width: 50px;
+        padding: 8px 0 8px 0;
+        background-color: #091130;
+        text-align: center;
+        margin: 0 auto;
+        color: #05ffd5;
+        margin-top: 5px;
+        border: 1px solid #0f1d52;
+        border-radius: 8px;
+        height: 30px;
+        margin: 3px;
+
+    }
+
+    footer .col ul li i {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 30px;
+        color: #05ffd5;
+    }
+
+    footer .col ul li:hover {
+        background-color: #05175c;
+        transition: background-color 0.3s ease, border-radius 0.3s ease;
+        transform: scale(1.2);
+        transition: transform 0.5s ease;
+
+
+    }
+</style>
+
+<body>
+    <header>
+        <div class="h">
+            <h1>Dexter</h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fa-sharp-duotone fa-solid fa-house"></i>Roots</a></li>
+                <li><a href="quest.html"><i class="fa-solid fa-layer-group"></i>Quest</a></li>
+                <li><a href="skills.html"><i class="fa-sharp-duotone fa-solid fa-brain"></i>Skills</a></li>
+                <li><a href="learn.html"><i class="fa-sharp-duotone fa-solid fa-book"></i>Learn</a></li>
+                <li><a href="about.html"><i class="fa-sharp-duotone fa-solid fa-user"></i>About</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+
+        <div class="resume">
+            <div class="Domain">
+                <h3>Web Design</h3>
+                <h3>Data Analyse</h3>
+                <h3>User Interface</h3>
+                <h3>Code Implement</h3>
+                <h3>Auto-Test</h3>
+                <h3>Query Handling</h3>
+            </div>
+            <br>
+            <div class="resumesub">
+                <p>Curious about my journey in data science?</p>
+                <a href="https://drive.google.com/uc?export=download&id=1XrteS64x7HaUvWtKPRgGNnZoem5rH22_" download><i
+                        class="fa-solid fa-download"></i>Resume</a>
+            </div>
+
+
+        </div>
+        <div class="content">
+            <h1>Hi, I'm <span class="name">Mohanraj</span></h1>
+            <h2>Data Analyst</h2>
+            <p>Hello, world! <span class="quote">"The human brain is the most powerful weapon on Earth"</span>, yet most
+                people use only a fraction of its potential. Explore the brilliance of creative and curious minds
+                through my blogs.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="cols">
+            <h2>Front-End</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JS</li>
+                <li>react</li>
+            </ul>
+        </div>
+        <div class="cols">
+            <h2>Data Science</h2>
+            <ul>
+                <li>Excel</li>
+                <li>PowerBI</li>
+                <li>Mysql</li>
+                <li>Python</li>
+            </ul>
+        </div>
+        <div class="cols">
+            <h2>Tools</h2>
+            <ul>
+                <li>VScode</li>
+                <li>Xampp</li>
+                <li>Google Colab</li>
+                <li>Workbench</li>
+            </ul>
+
+        </div>
+        <div class="col">
+            <h2>Social-media</h2>
+            <ul>
+                <li><a href="https://www.instagram.com/dexter.mohan/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/mohanrajofficial/"><i class="fa-brands fa-linkedin"
+                            target="_blank"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/mohanrajofficial/"><i class="fa-brands fa-github"
+                            target="_blank"></i></a></li>
+                <li><a href="https://www.hackerrank.com/profile/mohanraj_offici1"><i class="fa-brands fa-hackerrank"
+                            target="_blank"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope" target="_blank"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-paper-plane" target="_blank"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-whatsapp" target="_blank"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-message" target="_blank"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
