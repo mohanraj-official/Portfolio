@@ -1,3 +1,62 @@
+/* style for toggle menu */
+#menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+#menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    flex-direction: column;
+    background-color: #111;
+    width: 200px;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+}
+
+/* Animate icon to 'X' */
+#menu-toggle.open div:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+#menu-toggle.open div:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle.open div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+
+
+
+
 /* Reset and Base */
 * {
   margin: 0;
