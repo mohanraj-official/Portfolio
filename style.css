@@ -299,40 +299,34 @@ section {
   background-color: #0097a7;
 }
 
-
-/* some detailed of input of contact */
-.input-group {
-  position: relative;
+/* nput style for contant*/
+.input-group-row {
+  display: flex;
+  align-items: center;
+  background-color: #152536;
+  border-radius: 5px;
   margin-bottom: 1rem;
+  padding: 10px 12px;
 }
 
-.input-group i {
-  position: absolute;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
+.input-group-row label {
   color: #aaa;
   font-size: 16px;
-  pointer-events: none;
+  margin-right: 12px;
+  min-width: 24px;
+  text-align: center;
 }
 
-.input-group input,
-.input-group textarea {
-  padding-left: 45px; /* enough space for icon */
-  height: 45px;
-  border-radius: 5px;
+.input-group-row input,
+.input-group-row textarea {
+  flex: 1;
+  background: none;
   border: none;
-  width: 100%;
-  background-color: #152536;
   color: #fff;
   font-size: 14px;
   outline: none;
 }
 
-.input-group textarea {
-  resize: none;
-  padding-top: 12px;
-}
 
 
 
