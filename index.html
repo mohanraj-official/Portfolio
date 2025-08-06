@@ -79,8 +79,15 @@
     <section id="contact">
         <h2>Contact Me</h2>
         <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST" id="contact-form">
-            <input type="text" name="name" placeholder="How can I call you?" required>
-            <input type="email" name="email" placeholder="How can I reach you?" required>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="name" placeholder="Your Full Name" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+            </div>
+
             <textarea name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send</button>
         </form>
