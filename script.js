@@ -21,6 +21,9 @@ if (menuToggle && navLinks) {
   });
 }
 
+
+
+/* scroll to top button */
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
 window.addEventListener('scroll', () => {
@@ -37,3 +40,4 @@ scrollToTopBtn.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+

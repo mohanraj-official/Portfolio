@@ -255,20 +255,19 @@ footer {
 }
 
 
-/* scroll to top button */
 #scrollToTopBtn {
   position: fixed;
   bottom: 30px;
   right: 30px;
   display: none;
   background-color: #00d9ff;
-  color: #000;
+  color: black;
   border: none;
   padding: 10px 15px;
   font-size: 20px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 999;
+  z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease;
 }
