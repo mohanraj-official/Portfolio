@@ -254,6 +254,34 @@ footer {
   color: #888;
 }
 
+
+/* scroll to top button */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  background-color: #00d9ff;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #0088aa;
+  color: white;
+}
+
+
+
+
+
 /* Animation */
 @keyframes fadeIn {
   from {
