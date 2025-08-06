@@ -137,7 +137,8 @@ nav ul li a:hover::after {
   justify-content: center;
   position: relative;
   text-align: left;
-  padding: 6rem 2rem 2rem; /* extra padding for fixed nav */
+  padding: 6rem 2rem 2rem;
+  /* extra padding for fixed nav */
 }
 
 .hero-section::before {
@@ -232,7 +233,7 @@ section {
   background-color: #1e2a3a;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -242,9 +243,57 @@ section {
 }
 
 /* Contact */
-.contact-section {
+/* CONTACT FORM SECTION */
+#contact {
+  padding: 50px 20px;
   text-align: center;
+  background-color: #0b1a2a;
+  color: white;
 }
+
+#contact h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#contact-form textarea {
+  resize: vertical;
+}
+
+#contact-form button {
+  background-color: #00bcd4;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: #0097a7;
+}
+
+
+
+
 
 /* Footer */
 footer {
@@ -283,9 +332,17 @@ footer {
 }
 
 @keyframes float {
-  0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 
@@ -298,6 +355,7 @@ footer {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
