@@ -24,8 +24,7 @@ if (menuToggle && navLinks) {
 
 
 /* scroll to top button */
-<script>
-<script>
+
   document.addEventListener("DOMContentLoaded", () => {
     const scrollBtn = document.getElementById("scrollToTopBtn");
 
@@ -41,12 +40,10 @@ if (menuToggle && navLinks) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
-</script>
 
 
 
-
-/*the for submission validation action */
+/*the form submission validation action*/
 const form = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submitButton');
 const responseDiv = document.getElementById('responseMessage');
@@ -86,7 +83,7 @@ form.addEventListener('submit', async (e) => {
 
 
 
-/* project section popup */
+
 function openPopup(id) {
             document.getElementById(id).style.display = 'flex';
         }

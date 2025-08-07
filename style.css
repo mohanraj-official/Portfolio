@@ -616,41 +616,6 @@ footer {
 }
 
 
-
-
-/* github chart section */
-.github-section {
-  padding: 40px 20px;
-  text-align: center;
-  color: #fff;
-}
-
-.github-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  align-items: flex-start;
-  margin-top: 20px;
-}
-
-.github-chart img,
-.github-cards img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.github-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-
-
-
 /* testimonial swipes */
 .testimonial-section {
   padding: 60px 20px;
