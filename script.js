@@ -90,12 +90,20 @@ form.addEventListener('submit', async (e) => {
 
 
 /* project section popup */
-<script>
-  function openPopup(id) {
-    document.getElementById(id).style.display = "flex";
-  }
+function openPopup(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
 
-  function closePopup(id) {
-    document.getElementById(id).style.display = "none";
-  }
-</script>
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        // Close popup when clicking outside the content
+        window.onclick = function (event) {
+            const popups = document.querySelectorAll('.popup');
+            popups.forEach(popup => {
+                if (event.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        }

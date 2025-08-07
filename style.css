@@ -378,6 +378,8 @@ footer {
   transform: scale(1.1);
 }
 
+
+
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -428,17 +430,6 @@ footer {
   }
 }
 
-
-/* toggle mode */
-
-body.light-mode {
-  background-color: #f5f5f5;
-  color: #111;
-}
-
-body.light-mode nav {
-  background-color: #ddd;
-}
 
 
 /* Resume Downloading button */

@@ -177,26 +177,7 @@
     </button>
 
 
-    <script src="script.js"></script>
-    <script>
-        function openPopup(id) {
-            document.getElementById(id).style.display = 'flex';
-        }
-
-        function closePopup(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-
-        // Close popup when clicking outside the content
-        window.onclick = function (event) {
-            const popups = document.querySelectorAll('.popup');
-            popups.forEach(popup => {
-                if (event.target === popup) {
-                    popup.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    <script src="script.js" defer></script>
 
 </body>
 
