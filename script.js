@@ -105,6 +105,8 @@ function openPopup(id) {
 
 
 /* testimonial swipes */
+  document.addEventListener('DOMContentLoaded', function () {
+  // swiper init
   const swiper = new Swiper('.testimonial-swiper', {
     loop: true,
     pagination: {
@@ -115,5 +117,20 @@ function openPopup(id) {
       disableOnInteraction: false,
     },
   });
-Code Duplicate Finder
+
+  // scroll-to-top logic
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
 
