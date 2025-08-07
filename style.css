@@ -441,3 +441,24 @@ body.light-mode nav {
 }
 
 
+/* Resume Downloading button */
+.download-btn {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn i {
+  margin-right: 8px;
+}
+
+.download-btn:hover {
+  background-color: #45a049;
+}
+
+
