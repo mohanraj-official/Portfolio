@@ -367,7 +367,7 @@ footer {
   cursor: pointer;
   z-index: 999999;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  display: none;
+  display: none !important;
   animation: float 2s infinite;
   transition: background-color 0.3s, transform 0.3s;
 }
