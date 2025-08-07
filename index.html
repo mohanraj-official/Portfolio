@@ -30,6 +30,8 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#testimonial">testimonial</a></li>
+                <li><a href="#tech-stack">tech stack</a></li>
             </ul>
         </nav><button id="theme-toggle">Toggle Mode</button>
     </header>
@@ -76,15 +78,15 @@
         <h2>My Tech Stack</h2>
         <div class="tech-grid">
             <div class="tech-item">
-                <img src="/assets/python.svg" alt="Python">
+                <img src="assets/python.svg" alt="Python">
                 <p>Python</p>
             </div>
             <div class="tech-item">
-                <img src="" alt="SQL">
+                <img src="assets/sql.svg" alt="SQL">
                 <p>SQL</p>
             </div>
             <div class="tech-item">
-                <img src="/assets/power_bi.svg" alt="Power BI">
+                <img src="assets/power_bi.svg" alt="Power BI">
                 <p>Power BI</p>
             </div>
             <div class="tech-item">
@@ -109,15 +111,36 @@
 
             <div class="project-card" onclick="openPopup('project1')">
                 <img src="assets/data analyst.jpg" alt="Project 1">
-                <h3>Heart Attack Prediction</h3>
+                <h3>Creditcard Fraud Detection</h3>
                 <button>View Details</button>
             </div>
 
             <div class="project-card" onclick="openPopup('project2')">
                 <img src="assets/power Bi project.png" alt="Project 2">
-                <h3>Loan Analysis</h3>
+                <h3>Heart Attack Risk Prediction</h3>
                 <button>View Details</button>
             </div>
+
+            <div class="project-card" onclick="openPopup('project3')">
+                <img src="assets/data analyst.jpg" alt="Project 3">
+                <h3>Marketing Campaign Performance Insights</h3>
+                <button>View Details</button>
+            </div>
+
+            <div class="project-card" onclick="openPopup('project4')">
+                <img src="assets/data analyst.jpg" alt="Project 4">
+                <h3>E-Commerce Customer churn Analysis</h3>
+                <button>View Details</button>
+            </div>
+
+
+            <div class="project-card" onclick="openPopup('project5')">
+                <img src="assets/data analyst.jpg" alt="Project 3">
+                <h3>Bank Loan Performance Analysis</h3>
+                <button>View Details</button>
+            </div>
+
+
 
         </div>
     </section>
@@ -126,13 +149,138 @@
     <div id="project1" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup('project1')">&times;</span>
-            <h2>Heart Attack Prediction</h2>
-            <p>Used ML models to predict risk based on health data (age, cholesterol, etc).</p>
-            <p><strong>Tools:</strong> Python, Pandas, Sklearn</p>
-            <a href="#">GitHub Link</a>
+            <h2>Credit Card Fraud Detection</h2>
+            <p><strong>Duration:</strong> Jan 2024 – Feb 2025</p>
+            <p><strong>Organization:</strong> Entri Elevate</p>
+
+            <p><strong>Overview:</strong> Built ML models to detect fraudulent transactions from credit card data.</p>
+
+            <p><strong>Key Steps:</strong></p>
+            <ul>
+                <li><strong>Data Cleaning:</strong> Handled missing values and applied sampling to balance the dataset.
+                </li>
+                <li><strong>EDA:</strong> Used bar charts, box plots to analyze features like transaction amount and
+                    fraud patterns.</li>
+                <li><strong>Feature Selection:</strong> Removed less relevant attributes and retained key fraud
+                    indicators.</li>
+                <li><strong>Model Building:</strong> Trained Logistic Regression, Random Forest, and XGBoost
+                    classifiers.</li>
+                <li><strong>Evaluation:</strong> Compared models using Precision, Recall, and AUC-ROC metrics.</li>
+                <li><strong>Optimization:</strong> Tuned hyperparameters for better performance.</li>
+                <li><strong>Deployment (Optional):</strong> Designed for real-time fraud detection integration.</li>
+            </ul>
+
+            <p><strong>Tools:</strong> Python, Pandas, Matplotlib, Sklearn, XGBoost</p>
+            <a href="https://github.com/mohanraj-official/Machine_Learning-Credit-Card-Fraud-Detection">GitHub Link</a>
         </div>
     </div>
 
+
+
+
+    <div id="project2" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project2')">&times;</span>
+            <h2>Heart Attack Trends: Youth vs Adults (China)</h2>
+            <p><strong>Duration:</strong> Dec 2024 – Jan 2025</p>
+            <p><strong>Organization:</strong> Entri Elevate</p>
+
+            <p><strong>Overview:</strong> Analyzed 270,000 health records to compare heart attack risks between youth
+                (under 30) and adults (over 30) in China.</p>
+
+            <p><strong>Key Steps:</strong></p>
+            <ul>
+                <li><strong>Data Analysis:</strong> Used EDA to uncover patterns based on age, health metrics,
+                    lifestyle, and habits.</li>
+                <li><strong>Risk Indicators:</strong> Identified key features such as blood pressure, cholesterol, BMI,
+                    and physical activity.</li>
+                <li><strong>Model Training:</strong> Built ML models to predict heart attack risk based on age-specific
+                    features.</li>
+                <li><strong>Insights:</strong> Found both age groups at risk, but with different influencing factors.
+                </li>
+            </ul>
+
+            <p><strong>Tools:</strong> Python, Pandas, Sklearn, Matplotlib, Seaborn</p>
+            <a href="https://github.com/mohanraj-official/heart_predict/tree/master">GitHub Link</a>
+        </div>
+    </div>
+
+
+
+
+    <div id="project3" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project3')">&times;</span>
+            <h2>Python - Marketing Campaign Performance Insights</h2>
+            <p><strong>Duration:</strong> Oct 2024</p>
+            <p><strong>Organization:</strong> Entri Elevate</p>
+            <p>In this project, I analyzed the effectiveness of a marketing campaign by examining customer responses,
+                sales data, and various metrics. I began by collecting and cleaning the dataset, which included customer
+                demographics and campaign details.</p>
+            <p>Through exploratory data analysis (EDA), I identified patterns in how different customer groups
+                responded. I segmented customers by age, income, and location to pinpoint responsive audiences.</p>
+            <p>I applied machine learning models like Logistic Regression and Decision Trees to predict campaign
+                success. Accuracy and precision were used to evaluate the models. Based on insights, I recommended
+                targeting specific demographics and offering personalized discounts.</p>
+            <p>Visualizations such as bar and pie charts were created to effectively communicate findings and
+                strategies.</p>
+            <p>This project improved my skills in data analysis, customer segmentation, machine learning, and data
+                visualization.</p>
+            <p><strong>Skills:</strong> Exploratory Data Analysis · Matplotlib · Seaborn · Pandas · Data Cleaning</p>
+            <a href="https://github.com/mohanraj-official/Python---Marketing-Campaign-Performance-Insights">GitHub
+                Link</a>
+        </div>
+    </div>
+
+
+
+    <div id="project4" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project4')">&times;</span>
+            <h2>MySQL - E-Commerce Customer Churn Analysis</h2>
+            <p><strong>Duration:</strong> Sep 2024 - Oct 2024</p>
+            <p><strong>Organization:</strong> Entri Elevate</p>
+            <p>In this project, I analyzed customer churn for an e-commerce platform by studying customer data such as
+                demographics, purchase history, and platform interaction. Using MySQL, I cleaned and explored the data
+                to identify key factors influencing churn, such as purchase frequency and engagement.</p>
+            <p>I applied SQL queries to segment customers and predict churn using machine learning models like Logistic
+                Regression and Decision Trees. The analysis helped identify high-risk customer segments and suggested
+                strategies to reduce churn, such as targeted promotions.</p>
+            <p>This project enhanced my skills in MySQL, customer segmentation, churn analysis, and predictive modeling.
+            </p>
+            <p><strong>Skills:</strong> MySQL · Workbench · DDL · Data Manipulation · Data Control · Data Wrangling</p>
+            <a href="https://github.com/mohanraj-official/MySQL-E-Commerce_Customer_churn_Analysis">GitHub Link</a>
+        </div>
+    </div>
+
+
+
+    <div id="project5" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project5')">&times;</span>
+            <h2>Power BI - Bank Loan Performance Analysis</h2>
+            <p><strong>Duration:</strong> Aug 2024</p>
+            <p>The Bank Loan Performance Analysis project used Power BI to analyze loan data, focusing on loan
+                approvals, defaults, and customer demographics. Data was cleaned and transformed to ensure reliability
+                and accuracy.</p>
+            <p>Interactive dashboards were built to visualize key metrics like default rates, customer income, credit
+                scores, and loan types. These visualizations provided a clear view of customer behavior and loan trends.
+            </p>
+            <p>Insights from trend analysis helped predict future loan performance and identify improvement areas in
+                loan approval and risk management. The outcome was a more data-driven strategy to reduce defaults and
+                optimize lending practices.</p>
+            <p><strong>Skills:</strong> Microsoft Power BI · KPI Dashboards · Data Visualization · Creative
+                Visualization · Data Transformation · Exploratory Trend Analysis (ETA)</p>
+            <a href="https://github.com/mohanraj-official/PowerBI-Bank_loan_Performance_Analysis">GitHub / Dashboard Link</a>
+        </div>
+    </div>
+
+
+
+
+
+
+<!--
     <div id="project2" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup('project2')">&times;</span>
@@ -142,7 +290,7 @@
             <a href="#">GitHub Link</a>
         </div>
     </div>
-
+-->
 
     <!-- swiper for testimonial -->
     <section class="testimonial-section" id="testimonial">
