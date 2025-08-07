@@ -105,17 +105,6 @@ function openPopup(id) {
 
 
 /* testimonial swipes */
-<!-- Swiper CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<!-- Swiper Init -->
-<script>
   const swiper = new Swiper('.testimonial-swiper', {
     loop: true,
     pagination: {
@@ -126,5 +115,5 @@ function openPopup(id) {
       disableOnInteraction: false,
     },
   });
-</script>
+
 
