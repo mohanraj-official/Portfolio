@@ -86,3 +86,16 @@ form.addEventListener('submit', async (e) => {
   submitBtn.disabled = false;
   submitBtn.textContent = 'Send';
 });
+
+
+
+/* project section popup */
+<script>
+  function openPopup(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+
+  function closePopup(id) {
+    document.getElementById(id).style.display = "none";
+  }
+</script>

@@ -72,16 +72,46 @@
 
     </section>
 
-    <section id="projects" class="projects-section fade-in">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">Python - Marketing Campaign Insights</div>
-            <div class="project-card">ML - Heart Attack Risk Prediction</div>
-            <div class="project-card">MySQL - E-Commerce Churn Analysis</div>
-            <div class="project-card">Excel - Healthcare Data Analysis</div>
-            <div class="project-card">Power BI - Bank Loan Analysis</div>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+
+            <div class="project-card" onclick="openPopup('project1')">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Heart Attack Prediction</h3>
+                <button>View Details</button>
+            </div>
+
+            <div class="project-card" onclick="openPopup('project2')">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Loan Analysis</h3>
+                <button>View Details</button>
+            </div>
+
         </div>
     </section>
+
+    <!-- Popups -->
+    <div id="project1" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project1')">&times;</span>
+            <h2>Heart Attack Prediction</h2>
+            <p>Used ML models to predict risk based on health data (age, cholesterol, etc).</p>
+            <p><strong>Tools:</strong> Python, Pandas, Sklearn</p>
+            <a href="#">GitHub Link</a>
+        </div>
+    </div>
+
+    <div id="project2" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project2')">&times;</span>
+            <h2>Loan Analysis</h2>
+            <p>Analyzed loan approval trends and created dashboards.</p>
+            <p><strong>Tools:</strong> Excel, Power BI, SQL</p>
+            <a href="#">GitHub Link</a>
+        </div>
+    </div>
+
 
     <section id="contact">
         <h2>Contact Me</h2>
