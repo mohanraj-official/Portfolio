@@ -620,34 +620,31 @@ footer {
 
 /* github chart section */
 .github-section {
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
-  background-color: #f9f9f9;
+  color: #fff;
 }
 
-.github-section h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #1f1f1f;
-}
-
-.github-section p {
-  margin-bottom: 30px;
-  font-size: 1.1rem;
-  color: #444;
-}
-
-.github-stats {
+.github-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 20px;
 }
 
-.github-stats img {
+.github-chart img,
+.github-cards img {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.github-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
