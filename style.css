@@ -131,7 +131,7 @@ nav ul li a:hover::after {
 /* Hero Section */
 .hero-section {
   height: 100vh;
-  background: url('./assets/about.jpg') center/cover no-repeat;
+  background: url('./assets/about.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
