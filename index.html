@@ -163,59 +163,65 @@
 
 
 
-
+<!-- projects in carousel -->
     <section id="projects">
         <h2>My Projects</h2>
-        <div class="project-grid">
 
-            <div class="project-card" onclick="openPopup('project1')">
-                <img src="assets/credit card.jpg" alt="Project 1">
-                <h3>Creditcard Fraud Detection</h3>
-                <button>View Details</button>
+        <div class="carousel">
+            <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
+
+            <div class="carousel-track-container">
+                <div class="project-grid carousel-track">
+
+                    <div class="project-card" onclick="openPopup('project1')">
+                        <img src="assets/credit card.jpg" alt="Project 1" />
+                        <h3>Creditcard Fraud Detection</h3>
+                        <button>View Details</button>
+                    </div>
+
+                    <div class="project-card" onclick="openPopup('project2')">
+                        <img src="assets/heart attack.jpg" alt="Project 2" />
+                        <h3>Heart Attack Risk Prediction</h3>
+                        <button>View Details</button>
+                    </div>
+
+                    <div class="project-card" onclick="openPopup('project3')">
+                        <img src="assets/market campaign.jpg" alt="Project 3" />
+                        <h3>Marketing Campaign Performance Insights</h3>
+                        <button>View Details</button>
+                    </div>
+
+                    <div class="project-card" onclick="openPopup('project4')">
+                        <img src="assets/e-commerce.jpg" alt="Project 4" />
+                        <h3>E-Commerce Customer Churn Analysis</h3>
+                        <button>View Details</button>
+                    </div>
+
+                    <div class="project-card" onclick="openPopup('project5')">
+                        <img src="assets/bank loan performance.webp" alt="Project 5" />
+                        <h3>Bank Loan Performance Analysis</h3>
+                        <button>View Details</button>
+                    </div>
+
+                    <div class="project-card" onclick="openPopup('project6')">
+                        <img src="assets/library.webp" alt="Project 6" />
+                        <h3>Library Management and Attendance System</h3>
+                        <button>View Details</button>
+                    </div>
+
+                    <div class="project-card" onclick="openPopup('project7')">
+                        <img src="assets/medical healthcare.jpg" alt="Project 7" />
+                        <h3>Healthcare Data Analysis and Insights</h3>
+                        <button>View Details</button>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="project-card" onclick="openPopup('project2')">
-                <img src="assets/heart attack.jpg" alt="Project 2">
-                <h3>Heart Attack Risk Prediction</h3>
-                <button>View Details</button>
-            </div>
-
-            <div class="project-card" onclick="openPopup('project3')">
-                <img src="assets/market campaign.jpg" alt="Project 3">
-                <h3>Marketing Campaign Performance Insights</h3>
-                <button>View Details</button>
-            </div>
-
-            <div class="project-card" onclick="openPopup('project4')">
-                <img src="assets/e-commerce.jpg" alt="Project 4">
-                <h3>E-Commerce Customer churn Analysis</h3>
-                <button>View Details</button>
-            </div>
-
-
-            <div class="project-card" onclick="openPopup('project5')">
-                <img src="assets/bank loan performance.webp" alt="Project 3">
-                <h3>Bank Loan Performance Analysis</h3>
-                <button>View Details</button>
-            </div>
-
-
-            <div class="project-card" onclick="openPopup('project6')">
-                <img src="assets/library.webp" alt="Project 6">
-                <h3>Library Management and Attendance System</h3>
-                <button>View Details</button>
-            </div>
-
-            <div class="project-card" onclick="openPopup('project7')">
-                <img src="assets/medical healthcare.jpg" alt="Project 7">
-                <h3>Healthcare Data Analysis and Insights</h3>
-                <button>View Details</button>
-            </div>
-
-
-
+            <button class="carousel-btn next" aria-label="Next">&#10095;</button>
         </div>
     </section>
+
 
     <!-- Popups -->
     <div id="project1" class="popup">

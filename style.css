@@ -222,14 +222,26 @@ section {
 }
 
 /* Projects */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
   gap: 1.5rem;
-  margin-top: 2rem;
 }
 
 .project-card {
+  min-width: 250px; /* fix width to enable scrolling */
+  flex-shrink: 0;
   background-color: #1e2a3a;
   padding: 1.5rem;
   border-radius: 10px;
@@ -242,6 +254,32 @@ section {
   background-color: #273849;
 }
 
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(30, 42, 58, 0.8);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: #273849;
+}
 
 
 

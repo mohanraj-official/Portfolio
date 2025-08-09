@@ -142,3 +142,39 @@ scrollBtn.addEventListener("click", () => {
 
 
 
+// project carousel
+const track = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+const cards = Array.from(track.children);
+const cardWidth = cards[0].getBoundingClientRect().width + 24; // card width + gap (approx)
+
+let currentPosition = 0;
+
+prevBtn.addEventListener('click', () => {
+  currentPosition += cardWidth;
+  if (currentPosition > 0) currentPosition = -(cardWidth * (cards.length - visibleCards()));
+  track.style.transform = `translateX(${currentPosition}px)`;
+});
+
+nextBtn.addEventListener('click', () => {
+  currentPosition -= cardWidth;
+  if (Math.abs(currentPosition) > cardWidth * (cards.length - visibleCards())) {
+    currentPosition = 0;
+  }
+  track.style.transform = `translateX(${currentPosition}px)`;
+});
+
+// Calculate visible cards based on container width (responsive)
+function visibleCards() {
+  const containerWidth = document.querySelector('.carousel-track-container').offsetWidth;
+  return Math.floor(containerWidth / cardWidth);
+}
+
+// Optional: Adjust carousel on window resize
+window.addEventListener('resize', () => {
+  currentPosition = 0;
+  track.style.transform = `translateX(${currentPosition}px)`;
+});
+
+
