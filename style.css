@@ -935,58 +935,61 @@ footer {
 
 
 /* Social Media Section */
-.social-section {
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #1b2b3d, #0f1c2e);
+.connection-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0f1c2e, #1b2b3d);
   color: #ffffff;
   text-align: center;
 }
 
-.social-links {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+.section-subtitle {
+  font-size: 1rem;
+  color: #9ac3e5;
+  margin-bottom: 30px;
 }
 
-.social-icon {
+.connection-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+.conn-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: white;
+  background: rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
-.social-icon.linkedin {
-  background: #0077b5;
+.conn-icon img {
+  width: 26px;
+  height: 26px;
 }
 
-.social-icon.github {
-  background: #24292e;
+.conn-icon span {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-.social-icon.instagram {
-  background: #e1306c; /* Instagram pink */
-}
-
-
-.skill-icon.hackerrank {
-  background: #1ba94c;
-}
-
-.skill-icon.kaggle {
-  background: #20beff;
-}
-
-.skill-icon.keybr {
-  background: #ff9800;
-}
-
-.social-icon:hover {
+.conn-icon:hover {
   transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
+
+/* Specific Platform Colors */
+.linkedin { background: #0077b5; }
+.github { background: #24292e; }
+.email { background: #d44638; }
+.instagram { background: #e1306c; }
+.whatsapp { background: #25d366; }
+.hackerrank { background: #1ba94c; }
+.kaggle { background: #20beff; }
+.keybr { background: #ff9800; }
