@@ -1025,7 +1025,7 @@ footer {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  height: 350px;              /* fixed height */
+  height: 300px;              /* fixed height */
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
