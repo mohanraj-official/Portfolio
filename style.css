@@ -997,6 +997,19 @@ footer {
 
 
 /* Certificates Section */
+/* Certificates Section Container */
+.certificates-section {
+  max-width: 1100px; /* max width and center */
+  margin: 0 auto;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #ffffff;
+  text-align: center;
+  border-radius: 15px;
+  font-smoothing: antialiased;
+}
+
+/* Grid container for certificate cards */
 .certificates-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1007,48 +1020,90 @@ footer {
   padding: 0 10px;
 }
 
-/* Fixed card size */
+/* Individual certificate card */
 .certificate-card {
-  height: 350px;          /* fixed height for all cards */
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 350px;              /* fixed height */
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255 255 255 / 0.05); /* subtle translucent bg */
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  backdrop-filter: blur(12px);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255 255 255 / 0.08);
 }
 
-/* Image takes fixed height inside card */
+/* Dark overlay to blend bright images */
+.certificate-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(14, 26, 43, 0.4);
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+/* Certificate image */
 .certificate-card img {
-  height: 200px;           /* fixed image height */
+  height: 200px;             /* fixed image height */
   width: 100%;
-  object-fit: cover;       /* crop the image nicely */
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  object-fit: cover;         /* crop without distortion */
+  filter: brightness(0.9);   /* slightly dim */
+  transition: filter 0.3s ease;
   flex-shrink: 0;
+  display: block;
+  border-bottom: 1px solid rgba(255 255 255 / 0.1);
 }
 
-/* Info fills remaining space */
+/* Info section fills remaining space */
 .certificate-info {
   padding: 15px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 1; /* keep text above overlay */
 }
 
-/* Titles and text styling */
+/* Title styling */
 .certificate-info h3 {
   font-size: 1.1rem;
+  font-weight: 600;
   color: #60a5fa;
   margin-bottom: 6px;
 }
 
+/* Description styling */
 .certificate-info p {
   font-size: 0.9rem;
   color: #dbeafe;
-  margin-top: auto;  /* pushes text down if needed */
+  margin-top: auto;
+}
+
+/* Hover effects */
+.certificate-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 20px rgba(100, 200, 255, 0.4);
+}
+
+.certificate-card:hover img {
+  filter: brightness(1); /* brighten image on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 520px) {
+  .certificate-card {
+    height: 320px;
+  }
+  .certificate-card img {
+    height: 160px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
 }
 
