@@ -199,27 +199,102 @@ section {
 }
 
 /* About Section */
+.about-section {
+  background: linear-gradient(135deg, #0e1a2b, #182c4f);
+  padding: 80px 20px;
+  color: #fff;
+}
+
 .about-container {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap: 50px;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
 .about-image img {
-  max-width: 300px;
-  border-radius: 10px;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #00b4d8;
+  box-shadow: 0 10px 30px rgba(0, 180, 216, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
 }
 
 .about-content {
-  max-width: 600px;
+  flex: 1;
+  min-width: 300px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #00d4ff;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
 }
 
 .highlight {
-  color: #00d9ff;
+  color: #ffd166;
   font-weight: bold;
 }
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #00b4d8;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #0096c7;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+
+
+
 
 /* ================================
    Projects Section Styles
@@ -398,20 +473,7 @@ section {
   color: #94a3b8;
 }
 
-/* ================================
-   Swiper Pagination Dots
-   ================================ */
-.testimonial-swiper .swiper-pagination-bullet {
-  background-color: #94a3b8;
-  opacity: 0.7;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
 
-.testimonial-swiper .swiper-pagination-bullet-active {
-  background-color: #38bdf8;
-  transform: scale(1.3);
-  opacity: 1;
-}
 
 
 
