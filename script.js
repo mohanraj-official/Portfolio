@@ -143,35 +143,31 @@ scrollBtn.addEventListener("click", () => {
 
 
 // project carousel
-const projectCarousel = document.querySelector('.project-carousel');
-const track = projectCarousel.querySelector('.carousel-track');
-const prevBtn = projectCarousel.querySelector('.carousel-btn.prev');
-const nextBtn = projectCarousel.querySelector('.carousel-btn.next');
-const cards = Array.from(track.children);
-const cardWidth = cards[0].getBoundingClientRect().width + 24; // Adjust gap if needed
-
-let currentPosition = 0;
-
-prevBtn.addEventListener('click', () => {
-  currentPosition += cardWidth;
-  if (currentPosition > 0) currentPosition = -(cardWidth * (cards.length - visibleCards()));
-  track.style.transform = `translateX(${currentPosition}px)`;
-});
-
-nextBtn.addEventListener('click', () => {
-  currentPosition -= cardWidth;
-  if (Math.abs(currentPosition) > cardWidth * (cards.length - visibleCards())) {
-    currentPosition = 0;
+const projectSwiper = new Swiper('.project-swiper', {
+  slidesPerView: 3, // default (desktop)
+  spaceBetween: 24,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {       // mobile
+      slidesPerView: 1
+    },
+    768: {     // tablets
+      slidesPerView: 2
+    },
+    1024: {    // desktops
+      slidesPerView: 3
+    }
   }
-  track.style.transform = `translateX(${currentPosition}px)`;
-});
-
-function visibleCards() {
-  const containerWidth = projectCarousel.querySelector('.carousel-track-container').offsetWidth;
-  return Math.floor(containerWidth / cardWidth);
-}
-
-window.addEventListener('resize', () => {
-  currentPosition = 0;
-  track.style.transform = `translateX(${currentPosition}px)`;
 });
