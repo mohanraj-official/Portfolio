@@ -997,67 +997,58 @@ footer {
 
 
 /* Certificates Section */
-/* Certificate Section Styling */
-.certificate-section {
-  background-color: #0e1a2b; /* matches your dark steel blue theme */
-  padding: 40px 20px;
-  border-radius: 15px;
-}
-
-/* Certificate Card */
-.certificate-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Dark overlay */
-.certificate-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(14, 26, 43, 0.4); /* dark steel blue overlay */
-  pointer-events: none;
-}
-
-/* Certificate Image */
-.certificate-card img {
-  width: 100%;
-  display: block;
-  filter: brightness(0.9); /* slight dim */
-  transition: filter 0.3s ease;
-}
-
-/* Hover Effect - subtle glow */
-.certificate-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(100, 200, 255, 0.3);
-}
-
-.certificate-card:hover img {
-  filter: brightness(1); /* bring brightness back on hover */
-}
-
-
-.certificates-section {
-  max-width: 1100px; /* limits how wide the whole section can get */
-  margin: 0 auto;    /* centers the section horizontally */
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #ffffff;
-  text-align: center;
-}
-
 .certificates-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   margin-top: 40px;
-  justify-content: center; /* centers grid if fewer cards */
+  justify-content: center;
   width: 100%;
-  padding: 0 10px; /* optional side padding */
+  padding: 0 10px;
 }
+
+/* Fixed card size */
+.certificate-card {
+  height: 350px;          /* fixed height for all cards */
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  backdrop-filter: blur(12px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Image takes fixed height inside card */
+.certificate-card img {
+  height: 200px;           /* fixed image height */
+  width: 100%;
+  object-fit: cover;       /* crop the image nicely */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+/* Info fills remaining space */
+.certificate-info {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Titles and text styling */
+.certificate-info h3 {
+  font-size: 1.1rem;
+  color: #60a5fa;
+  margin-bottom: 6px;
+}
+
+.certificate-info p {
+  font-size: 0.9rem;
+  color: #dbeafe;
+  margin-top: auto;  /* pushes text down if needed */
+}
+
