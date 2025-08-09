@@ -228,37 +228,38 @@ section {
 /* Carousel Navigation Buttons */
 .project-swiper .swiper-button-next,
 .project-swiper .swiper-button-prev {
-  color: #0dcaf0; /* Theme blue */
-  background: rgba(0, 0, 0, 0.4);
+  color: #0dcaf0;
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .project-swiper .swiper-button-next:hover,
 .project-swiper .swiper-button-prev:hover {
   background: #0dcaf0;
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 /* Position Navigation Buttons */
 .project-swiper .swiper-button-prev {
-  left: -50px; /* Push left */
+  left: -45px;
 }
 
 .project-swiper .swiper-button-next {
-  right: -50px; /* Push right */
+  right: -45px;
 }
 
 /* Pagination Dots */
 .project-swiper .swiper-pagination-bullet {
-  background: #999;
-  opacity: 0.6;
+  background: #bbb;
+  opacity: 0.7;
   transition: opacity 0.3s ease, background 0.3s ease;
 }
 
@@ -269,38 +270,48 @@ section {
 
 /* Project Cards */
 .project-swiper .project-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  background: #14263d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.project-swiper .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
 }
 
 .project-swiper .project-card img {
   width: 100%;
-  height: 200px; /* Fixed image height */
-  object-fit: cover; /* Keeps ratio but crops excess */
+  height: 200px;
+  object-fit: cover;
 }
 
-.project-swiper .project-card .card-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.project-swiper .project-card h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  padding: 12px 8px 0;
 }
 
 /* View Details Button */
-.project-swiper .project-card .btn {
+.project-swiper .project-card button {
   background: #0dcaf0;
   color: #fff;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 25px;
   border: none;
+  margin: 12px 0 16px;
+  cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.project-swiper .project-card .btn:hover {
+.project-swiper .project-card button:hover {
   background: #0aa1c0;
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 
