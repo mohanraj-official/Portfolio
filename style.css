@@ -632,14 +632,14 @@ footer {
 /* Tech Stack */
 #tech-stack {
   padding: 60px 20px;
-  background: #f9f9f9;
+  background: #0a1a2f; /* Dark steel blue background */
   text-align: center;
 }
 
 #tech-stack h2 {
   font-size: 2.5em;
   margin-bottom: 40px;
-  color: #222;
+  color: #00c8ff; /* Bright accent matching buttons */
   font-weight: bold;
 }
 
@@ -650,7 +650,7 @@ footer {
 .tech-category h3 {
   font-size: 1.5em;
   margin-bottom: 20px;
-  color: #444;
+  color: #e0e6ed; /* Light text for dark background */
   position: relative;
   display: inline-block;
 }
@@ -659,7 +659,7 @@ footer {
   content: '';
   display: block;
   height: 3px;
-  background: #4a90e2;
+  background: #00c8ff; /* Accent underline */
   width: 50%;
   margin: 8px auto 0;
   border-radius: 2px;
@@ -679,15 +679,15 @@ footer {
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: #fff;
+  background: #16243b; /* Slightly lighter than background */
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .tech-item:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0,200,255,0.4);
 }
 
 .tech-item img {
@@ -699,7 +699,6 @@ footer {
 
 .tech-item p {
   font-size: 1rem;
-  color: #333;
+  color: #e0e6ed; /* Light text */
   margin: 0;
 }
-
