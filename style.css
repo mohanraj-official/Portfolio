@@ -221,7 +221,10 @@ section {
   font-weight: bold;
 }
 
-/* Projects */
+/* ================================
+   Projects Section Styles
+   ================================ */
+
 /* Carousel Navigation Buttons */
 .project-swiper .swiper-button-next,
 .project-swiper .swiper-button-prev {
@@ -241,6 +244,15 @@ section {
   background: #0dcaf0;
   color: #fff;
   transform: scale(1.1);
+}
+
+/* Position Navigation Buttons */
+.project-swiper .swiper-button-prev {
+  left: -50px; /* Push left */
+}
+
+.project-swiper .swiper-button-next {
+  right: -50px; /* Push right */
 }
 
 /* Pagination Dots */
@@ -275,11 +287,10 @@ section {
   justify-content: space-between;
 }
 
-
 /* View Details Button */
 .project-swiper .project-card .btn {
   background: #0dcaf0;
-  color: white;
+  color: #fff;
   font-weight: bold;
   padding: 8px 16px;
   border-radius: 25px;
@@ -291,13 +302,7 @@ section {
   background: #0aa1c0;
   transform: scale(1.05);
 }
-.project-swiper .swiper-button-prev {
-  left: -50px; /* Push left */
-}
 
-.project-swiper .swiper-button-next {
-  right: -50px; /* Push right */
-}
 
 
 
