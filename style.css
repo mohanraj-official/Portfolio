@@ -302,22 +302,7 @@ section {
 
 
 
-
-/* testimonial swipes */
-.testimonial-section {
-  padding: 60px 20px;
-  background: var(--background-color, #0f172a); /* dark steel blue if dark */
-  text-align: center;
-  color: var(--text-color, #ffffff);
-}
-
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: var(--primary-color, #a5d8ff);
-  font-weight: bold;
-}
-
+/* testimonial swiper */
 .testimonial-card {
   background: #1e293b;
   border-radius: 16px;
@@ -325,35 +310,26 @@ section {
   max-width: 800px;
   margin: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  min-height: 250px; /* keeps same height during swipe */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .testimonial-quote {
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 1.6;
   color: #e0e7ff;
-  margin-bottom: 20px;
   font-style: italic;
+  margin-bottom: 20px;
 }
 
-.testimonial-author {
-  font-weight: bold;
-  color: #60a5fa;
-  margin-bottom: 5px;
-}
-
-.testimonial-role {
-  font-size: 0.9rem;
-  color: #cbd5e1;
-}
-
-.swiper-pagination-bullet {
-  background-color: #60a5fa;
-  opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #38bdf8;
-}
 
 
 

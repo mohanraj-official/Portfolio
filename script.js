@@ -105,25 +105,18 @@ window.onclick = function (event) {
 
 
 /* testimonial swipes */
-document.addEventListener('DOMContentLoaded', function () {
-  // swiper init
-  const swiper = new Swiper('.testimonial-swiper', {
-    loop: true,
-    speed: 800, // Smooth transition speed (in ms)
-    effect: 'fade', // Fade instead of slide (optional)
-    fadeEffect: {
-      crossFade: true
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true, // Allow clicking dots to navigate
-    },
-    autoplay: {
-      delay: 7000, // Slower - 7 seconds per testimonial
-      disableOnInteraction: false,
-    },
-  });
+var swiper = new Swiper('.testimonial-swiper', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
 });
+
 
 
 // scroll-to-top logic
