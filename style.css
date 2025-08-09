@@ -996,69 +996,81 @@ footer {
 
 
 
-/* certificates */
+/* Certificates Section */
 .certificates-section {
   padding: 60px 20px;
-  background: linear-gradient(135deg, #0f1c2e, #1b2b3d);
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   color: #ffffff;
   text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #93c5fd;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-top: 5px;
 }
 
 .certificates-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
+/* Card Styling */
 .certificate-card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .certificate-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
+/* Certificate Image */
 .certificate-card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Certificate Info */
 .certificate-info {
   padding: 15px;
 }
 
 .certificate-info h3 {
   font-size: 1.1rem;
-  color: #9ac3e5;
-  margin-bottom: 5px;
+  font-weight: 600;
+  color: #60a5fa;
+  margin-bottom: 6px;
 }
 
 .certificate-info p {
   font-size: 0.9rem;
-  color: #dbe9f4;
-  margin-bottom: 10px;
+  color: #dbeafe;
 }
 
-.view-btn {
-  display: inline-block;
-  padding: 8px 14px;
-  background: #3fa7d6;
-  color: white;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.view-btn:hover {
-  background: #2c8ab5;
+/* Mobile Optimization */
+@media (max-width: 500px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .certificate-card img {
+    height: 160px;
+  }
 }
