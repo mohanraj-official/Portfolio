@@ -931,3 +931,62 @@ footer {
 
 
 
+
+
+
+/* Social Media Section */
+.social-section {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #1b2b3d, #0f1c2e);
+  color: #ffffff;
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.social-icon.linkedin {
+  background: #0077b5;
+}
+
+.social-icon.github {
+  background: #24292e;
+}
+
+.social-icon.instagram {
+  background: #e1306c; /* Instagram pink */
+}
+
+
+.skill-icon.hackerrank {
+  background: #1ba94c;
+}
+
+.skill-icon.kaggle {
+  background: #20beff;
+}
+
+.skill-icon.keybr {
+  background: #ff9800;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
