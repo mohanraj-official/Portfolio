@@ -302,7 +302,22 @@ section {
 
 
 
-/* testimonial swiper */
+
+/* testimonial swipes */
+.testimonial-section {
+  padding: 60px 20px;
+  background: var(--background-color, #0f172a); /* dark steel blue if dark */
+  text-align: center;
+  color: var(--text-color, #ffffff);
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--primary-color, #a5d8ff);
+  font-weight: bold;
+}
+
 .testimonial-card {
   background: #1e293b;
   border-radius: 16px;
@@ -310,26 +325,35 @@ section {
   max-width: 800px;
   margin: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  min-height: 250px; /* keeps same height during swipe */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .testimonial-quote {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #e0e7ff;
-  font-style: italic;
   margin-bottom: 20px;
+  font-style: italic;
 }
 
+.testimonial-author {
+  font-weight: bold;
+  color: #60a5fa;
+  margin-bottom: 5px;
+}
+
+.testimonial-role {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.swiper-pagination-bullet {
+  background-color: #60a5fa;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #38bdf8;
+}
 
 
 
@@ -611,55 +635,105 @@ footer {
   box-shadow: 0 16px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* === POPUP STYLING === */
+/* === POPUP STYLING (Futuristic Glassmorphism) === */
 .popup {
   display: none;
   position: fixed;
   z-index: 1999;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
   align-items: center;
   justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Smooth fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .popup-content {
-  background-color: #1e293b;
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 500px;
+  background: rgba(30, 41, 59, 0.85); /* Glassy deep navy */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 30px 35px;
+  max-width: 600px;
   width: 90%;
-  color: white;
+  color: #e2e8f0;
   text-align: left;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
   position: relative;
-  max-height: 80vh;        /* Limit height to 80% of viewport height */
+  max-height: 80vh;
   overflow-y: auto;
+  transform: translateY(-20px);
+  opacity: 0;
+  animation: slideUp 0.35s ease-out forwards;
+}
+
+/* Slide-up animation for popup content */
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .popup-content h2 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #38bdf8;
   margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 8px;
 }
 
 .popup-content p {
   margin-bottom: 10px;
   line-height: 1.6;
+  font-size: 1rem;
+}
+
+.popup-content ul {
+  margin: 10px 0 20px 20px;
+  list-style: disc;
+}
+
+.popup-content li {
+  margin-bottom: 8px;
 }
 
 .popup-content a {
-  color: #38bdf8;
-  text-decoration: underline;
-  font-weight: bold;
+  display: inline-block;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #38bdf8, #06b6d4);
+  color: #0f172a;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.popup-content a:hover {
+  background: linear-gradient(135deg, #06b6d4, #38bdf8);
+  transform: scale(1.05);
 }
 
 .popup-content .close {
   position: absolute;
-  top: 15px; right: 20px;
+  top: 15px;
+  right: 20px;
   font-size: 28px;
-  color: #fff;
+  color: #94a3b8;
   cursor: pointer;
   font-weight: bold;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.popup-content .close:hover {
+  color: #38bdf8;
+  transform: rotate(90deg);
 }
 
 
