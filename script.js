@@ -22,27 +22,6 @@ if (menuToggle && navLinks) {
 }
 
 
-
-/* scroll to top button */
-
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollBtn = document.getElementById("scrollToTopBtn");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      scrollBtn.style.display = "block";
-    } else {
-      scrollBtn.style.display = "none";
-    }
-  });
-
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
-
-
-
 /*the form submission validation action*/
 const form = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submitButton');
@@ -84,6 +63,8 @@ form.addEventListener('submit', async (e) => {
 
 
 
+
+
 function openPopup(id) {
   document.getElementById(id).style.display = 'flex';
 }
@@ -103,21 +84,20 @@ window.onclick = function (event) {
 }
 
 
-// Testimonial corousel 
+
+// testimonial new design 
 document.addEventListener('DOMContentLoaded', function () {
   new Swiper('.testimonial-swiper', {
     loop: true,
     speed: 800,
-    effect: 'fade', // Smooth fade effect
-    fadeEffect: {
-      crossFade: true
-    },
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
     pagination: {
       el: '.swiper-pagination',
       clickable: true
     },
     autoplay: {
-      delay: 7000,
+      delay: 6000,
       disableOnInteraction: false
     }
   });
