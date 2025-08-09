@@ -143,11 +143,12 @@ scrollBtn.addEventListener("click", () => {
 
 
 // project carousel
-const track = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
+const projectCarousel = document.querySelector('.project-carousel');
+const track = projectCarousel.querySelector('.carousel-track');
+const prevBtn = projectCarousel.querySelector('.carousel-btn.prev');
+const nextBtn = projectCarousel.querySelector('.carousel-btn.next');
 const cards = Array.from(track.children);
-const cardWidth = cards[0].getBoundingClientRect().width + 24; // card width + gap (approx)
+const cardWidth = cards[0].getBoundingClientRect().width + 24; // Adjust gap if needed
 
 let currentPosition = 0;
 
@@ -165,16 +166,12 @@ nextBtn.addEventListener('click', () => {
   track.style.transform = `translateX(${currentPosition}px)`;
 });
 
-// Calculate visible cards based on container width (responsive)
 function visibleCards() {
-  const containerWidth = document.querySelector('.carousel-track-container').offsetWidth;
+  const containerWidth = projectCarousel.querySelector('.carousel-track-container').offsetWidth;
   return Math.floor(containerWidth / cardWidth);
 }
 
-// Optional: Adjust carousel on window resize
 window.addEventListener('resize', () => {
   currentPosition = 0;
   track.style.transform = `translateX(${currentPosition}px)`;
 });
-
-
