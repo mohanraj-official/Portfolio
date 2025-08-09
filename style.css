@@ -222,64 +222,82 @@ section {
 }
 
 /* Projects */
-.carousel {
-  position: relative;
-  max-width: 900px;
-  margin: 2rem auto;
-  overflow: hidden;
-}
-
-.carousel-track-container {
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-  gap: 1.5rem;
-}
-
-.project-card {
-  min-width: 250px; /* fix width to enable scrolling */
-  flex-shrink: 0;
-  background-color: #1e2a3a;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  background-color: #273849;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(30, 42, 58, 0.8);
-  border: none;
-  color: white;
-  font-size: 2rem;
-  padding: 0.3rem 0.8rem;
-  cursor: pointer;
+/* Carousel Navigation Buttons */
+.project-swiper .swiper-button-next,
+.project-swiper .swiper-button-prev {
+  color: #0dcaf0; /* Theme blue */
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
-  user-select: none;
-  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.carousel-btn.prev {
-  left: 10px;
+.project-swiper .swiper-button-next:hover,
+.project-swiper .swiper-button-prev:hover {
+  background: #0dcaf0;
+  color: #fff;
+  transform: scale(1.1);
 }
 
-.carousel-btn.next {
-  right: 10px;
+/* Pagination Dots */
+.project-swiper .swiper-pagination-bullet {
+  background: #999;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, background 0.3s ease;
 }
 
-.carousel-btn:hover {
-  background-color: #273849;
+.project-swiper .swiper-pagination-bullet-active {
+  background: #0dcaf0;
+  opacity: 1;
 }
+
+/* Project Cards */
+.project-swiper .project-card {
+  background: #0b1d2a; /* Dark background for cards */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-swiper .project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect for card */
+.project-swiper .project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-swiper .project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* View Details Button */
+.project-swiper .project-card .btn {
+  background: #0dcaf0;
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-swiper .project-card .btn:hover {
+  background: #0aa1c0;
+  transform: scale(1.05);
+}
+
+
 
 
 
