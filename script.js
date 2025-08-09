@@ -25,21 +25,21 @@ if (menuToggle && navLinks) {
 
 /* scroll to top button */
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const scrollBtn = document.getElementById("scrollToTopBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scrollToTopBtn");
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
-        scrollBtn.style.display = "block";
-      } else {
-        scrollBtn.style.display = "none";
-      }
-    });
-
-    scrollBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
   });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
 
 
 
@@ -85,52 +85,60 @@ form.addEventListener('submit', async (e) => {
 
 
 function openPopup(id) {
-            document.getElementById(id).style.display = 'flex';
-        }
+  document.getElementById(id).style.display = 'flex';
+}
 
-        function closePopup(id) {
-            document.getElementById(id).style.display = 'none';
-        }
+function closePopup(id) {
+  document.getElementById(id).style.display = 'none';
+}
 
-        // Close popup when clicking outside the content
-        window.onclick = function (event) {
-            const popups = document.querySelectorAll('.popup');
-            popups.forEach(popup => {
-                if (event.target === popup) {
-                    popup.style.display = 'none';
-                }
-            });
-        }
+// Close popup when clicking outside the content
+window.onclick = function (event) {
+  const popups = document.querySelectorAll('.popup');
+  popups.forEach(popup => {
+    if (event.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
+}
 
 
 
 /* testimonial swipes */
-  document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   // swiper init
   const swiper = new Swiper('.testimonial-swiper', {
     loop: true,
+    speed: 800, // Smooth transition speed (in ms)
+    effect: 'fade', // Fade instead of slide (optional)
+    fadeEffect: {
+      crossFade: true
+    },
     pagination: {
       el: '.swiper-pagination',
+      clickable: true, // Allow clicking dots to navigate
     },
     autoplay: {
-      delay: 5000,
+      delay: 7000, // Slower - 7 seconds per testimonial
       disableOnInteraction: false,
     },
   });
+});
 
-  // scroll-to-top logic
-  const scrollBtn = document.getElementById("scrollToTopBtn");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      scrollBtn.style.display = "block";
-    } else {
-      scrollBtn.style.display = "none";
-    }
-  });
 
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+// scroll-to-top logic
+const scrollBtn = document.getElementById("scrollToTopBtn");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 });
 
 
