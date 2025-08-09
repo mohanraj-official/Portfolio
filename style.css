@@ -1097,7 +1097,7 @@ footer {
 /* Responsive adjustments */
 @media (max-width: 520px) {
   .certificate-card {
-    height: 320px;
+    height: 290px;
   }
   .certificate-card img {
     height: 160px;
