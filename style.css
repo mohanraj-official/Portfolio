@@ -257,29 +257,24 @@ section {
 
 /* Project Cards */
 .project-swiper .project-card {
-  background: #0b1d2a; /* Dark background for cards */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-swiper .project-card img {
   width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.4s ease;
+  height: 200px; /* Fixed image height */
+  object-fit: cover; /* Keeps ratio but crops excess */
 }
 
-/* Hover effect for card */
-.project-swiper .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+.project-swiper .project-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.project-swiper .project-card:hover img {
-  transform: scale(1.05);
-}
 
 /* View Details Button */
 .project-swiper .project-card .btn {
@@ -295,6 +290,13 @@ section {
 .project-swiper .project-card .btn:hover {
   background: #0aa1c0;
   transform: scale(1.05);
+}
+.project-swiper .swiper-button-prev {
+  left: -50px; /* Push left */
+}
+
+.project-swiper .swiper-button-next {
+  right: -50px; /* Push right */
 }
 
 
