@@ -308,62 +308,56 @@ section {
 
 
 
-/* Section Title */
-.section-title {
+/* testimonial swipes */
+.testimonial-section {
+  padding: 60px 20px;
+  background: var(--background-color, #0f172a); /* dark steel blue if dark */
   text-align: center;
+  color: var(--text-color, #ffffff);
+}
+
+.section-title {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  color: var(--primary-color, #a5d8ff);
+  font-weight: bold;
 }
 
-/* Swiper Container */
-.testimonial-swiper {
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
-  padding-bottom: 50px;
-}
-
-/* Card Styling */
 .testimonial-card {
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .testimonial-quote {
-  font-style: italic;
   font-size: 1.1rem;
-  margin-bottom: 15px;
+  line-height: 1.7;
+  color: #e0e7ff;
+  margin-bottom: 20px;
+  font-style: italic;
 }
 
 .testimonial-author {
   font-weight: bold;
-  margin: 0;
+  color: #60a5fa;
+  margin-bottom: 5px;
 }
 
 .testimonial-role {
   font-size: 0.9rem;
-  color: #777;
-}
-
-/* Navigation Buttons */
-.swiper-button-prev, .swiper-button-next {
-  color: #333;
+  color: #cbd5e1;
 }
 
 .swiper-pagination-bullet {
-  background: #555;
+  background-color: #60a5fa;
+  opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background: #000;
+  background-color: #38bdf8;
 }
 
 

@@ -104,26 +104,26 @@ window.onclick = function (event) {
 
 
 
-// testimonial swipes
+/* testimonial swipes */
+document.addEventListener('DOMContentLoaded', function () {
+  // swiper init
   const swiper = new Swiper('.testimonial-swiper', {
     loop: true,
-    grabCursor: true,
-    spaceBetween: 30,
+    speed: 800, // Smooth transition speed (in ms)
+    effect: 'fade', // Fade instead of slide (optional)
+    fadeEffect: {
+      crossFade: true
+    },
     pagination: {
       el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      clickable: true, // Allow clicking dots to navigate
     },
     autoplay: {
-      delay: 5000,
+      delay: 7000, // Slower - 7 seconds per testimonial
       disableOnInteraction: false,
     },
   });
-
-
+});
 
 
 // scroll-to-top logic
@@ -143,26 +143,35 @@ scrollBtn.addEventListener("click", () => {
 
 
 // project carousel
-document.addEventListener('DOMContentLoaded', function () {
-  const projectSwiper = new Swiper('.project-swiper', {
-    loop: true,
-    speed: 600,
-    spaceBetween: 20,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.project-swiper .swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.project-swiper .swiper-button-next',
-      prevEl: '.project-swiper .swiper-button-prev',
-    },
-    breakpoints: {
-      0: { slidesPerView: 1 },     // mobile
-      768: { slidesPerView: 3 },   // desktop
-    }
-  });
+const projectCarousel = document.querySelector('.project-carousel');
+const track = projectCarousel.querySelector('.carousel-track');
+const prevBtn = projectCarousel.querySelector('.carousel-btn.prev');
+const nextBtn = projectCarousel.querySelector('.carousel-btn.next');
+const cards = Array.from(track.children);
+const cardWidth = cards[0].getBoundingClientRect().width + 24; // Adjust gap if needed
+
+let currentPosition = 0;
+
+prevBtn.addEventListener('click', () => {
+  currentPosition += cardWidth;
+  if (currentPosition > 0) currentPosition = -(cardWidth * (cards.length - visibleCards()));
+  track.style.transform = `translateX(${currentPosition}px)`;
+});
+
+nextBtn.addEventListener('click', () => {
+  currentPosition -= cardWidth;
+  if (Math.abs(currentPosition) > cardWidth * (cards.length - visibleCards())) {
+    currentPosition = 0;
+  }
+  track.style.transform = `translateX(${currentPosition}px)`;
+});
+
+function visibleCards() {
+  const containerWidth = projectCarousel.querySelector('.carousel-track-container').offsetWidth;
+  return Math.floor(containerWidth / cardWidth);
+}
+
+window.addEventListener('resize', () => {
+  currentPosition = 0;
+  track.style.transform = `translateX(${currentPosition}px)`;
 });
