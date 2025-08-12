@@ -149,3 +149,30 @@ const projectSwiper = new Swiper('.project-swiper', {
     }
   }
 });
+
+
+
+/* friend's corner */
+// Temporary data for preview
+const sampleFriends = [
+  { name: "Alice", message: "Loved working on our last project!", link: "#" },
+  { name: "Bob", message: "Can’t wait for the next hackathon!", link: "#" },
+  { name: "Charlie", message: "Here’s my latest design update.", link: "#" }
+];
+
+function renderFriends(friends) {
+  const container = document.getElementById("friends-container");
+  container.innerHTML = "";
+  friends.forEach(friend => {
+    const card = document.createElement("div");
+    card.classList.add("friend-card");
+    card.innerHTML = `
+      <h3>${friend.name}</h3>
+      <p>${friend.message}</p>
+      <a href="${friend.link}" target="_blank">View More</a>
+    `;
+    container.appendChild(card);
+  });
+}
+
+renderFriends(sampleFriends);

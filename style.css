@@ -1107,3 +1107,69 @@ footer {
   }
 }
 
+/* friend's corner*/
+/* ---------- Friends' Corner Section ---------- */
+#friends-corner {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #0b1a2a; /* same as contact */
+  color: white;
+}
+
+#friends-corner h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+#friends-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Friend Card */
+.friend-card {
+  background-color: #152536; /* same dark tone as input rows */
+  border-radius: 6px;
+  padding: 20px;
+  text-align: left;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.friend-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.friend-card h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #00bcd4; /* accent color */
+}
+
+.friend-card p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 10px 0;
+}
+
+.friend-card a {
+  align-self: flex-start;
+  background-color: #00bcd4;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.friend-card a:hover {
+  background-color: #0097a7;
+}
