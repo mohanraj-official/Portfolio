@@ -154,36 +154,36 @@ const projectSwiper = new Swiper('.project-swiper', {
 
 // Friend'f corner
 const sampleFriends = [
-  { 
-    name: "Alice Johnson", 
-    company: "Google", 
-    role: "Software Engineer", 
-    message: "Loved working on our last project!", 
-    photo: "images/alice.jpg", 
-    link: "#" 
+  {
+    name: "Rajan",
+    company: "digtinctive",
+    role: "Data Analyst",
+    message: "Watch 'Dark' Series",
+    photo: "images/alice.jpg",
+    link: "#"
   },
-  { 
-    name: "Bob Smith", 
-    company: "Amazon", 
-    role: "Data Analyst", 
-    message: "Can’t wait for the next hackathon!", 
-    photo: "images/bob.jpg", 
-    link: "#" 
+  {
+    name: "Rajkumar",
+    company: "everestims",
+    role: "Automation Engineer",
+    message: "Be Motivated",
+    photo: "images/bob.jpg",
+    link: "#"
   },
-  { 
-    name: "Charlie Brown", 
-    company: "Microsoft", 
-    role: "UI/UX Designer", 
-    message: "Here’s my latest design update.", 
-    photo: "images/charlie.jpg", 
-    link: "#" 
+  {
+    name: "Abishake",
+    company: "gadaget computer",
+    role: "QA Engineer",
+    message: "Explore untill You Die",
+    photo: "images/charlie.jpg",
+    link: "#"
   }
 ];
 
 function renderFriends(friends) {
   const container = document.getElementById("friends-container");
   container.innerHTML = "";
-  
+
   friends.forEach(friend => {
     const card = document.createElement("div");
     card.classList.add("friend-card");
