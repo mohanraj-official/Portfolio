@@ -159,7 +159,7 @@ const sampleFriends = [
     company: "digtinctive",
     role: "Data Analyst",
     message: "Watch 'Dark' Series",
-    photo: "images/alice.jpg",
+    photo: "assets/avatar/a1.jpg",
     link: "#"
   },
   {
@@ -167,7 +167,7 @@ const sampleFriends = [
     company: "everestims",
     role: "Automation Engineer",
     message: "Be Motivated",
-    photo: "images/bob.jpg",
+    photo: "assets/avatar/a2.jpg",
     link: "#"
   },
   {
@@ -175,7 +175,7 @@ const sampleFriends = [
     company: "gadaget computer",
     role: "QA Engineer",
     message: "Explore untill You Die",
-    photo: "images/charlie.jpg",
+    photo: "assets/avatar/a3.jpg",
     link: "#"
   }
 ];
