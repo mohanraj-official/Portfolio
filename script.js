@@ -152,22 +152,46 @@ const projectSwiper = new Swiper('.project-swiper', {
 
 
 
-/* friend's corner */
-// Temporary data for preview
+// Updated friends data
 const sampleFriends = [
-  { name: "Alice", message: "Loved working on our last project!", link: "#" },
-  { name: "Bob", message: "Can’t wait for the next hackathon!", link: "#" },
-  { name: "Charlie", message: "Here’s my latest design update.", link: "#" }
+  { 
+    name: "Alice Johnson", 
+    company: "Google", 
+    role: "Software Engineer", 
+    message: "Loved working on our last project!", 
+    photo: "images/alice.jpg", 
+    link: "#" 
+  },
+  { 
+    name: "Bob Smith", 
+    company: "Amazon", 
+    role: "Data Analyst", 
+    message: "Can’t wait for the next hackathon!", 
+    photo: "images/bob.jpg", 
+    link: "#" 
+  },
+  { 
+    name: "Charlie Brown", 
+    company: "Microsoft", 
+    role: "UI/UX Designer", 
+    message: "Here’s my latest design update.", 
+    photo: "images/charlie.jpg", 
+    link: "#" 
+  }
 ];
 
 function renderFriends(friends) {
   const container = document.getElementById("friends-container");
   container.innerHTML = "";
+  
   friends.forEach(friend => {
     const card = document.createElement("div");
     card.classList.add("friend-card");
     card.innerHTML = `
+      <img src="${friend.photo}" alt="${friend.name}">
       <h3>${friend.name}</h3>
+      <div class="company">${friend.company}</div>
+      <div class="role">${friend.role}</div>
       <p>${friend.message}</p>
       <a href="${friend.link}" target="_blank">View More</a>
     `;
