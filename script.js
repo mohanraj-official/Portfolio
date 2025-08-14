@@ -152,7 +152,7 @@ const projectSwiper = new Swiper('.project-swiper', {
 
 
 
-// Updated friends data
+// Friend'f corner
 const sampleFriends = [
   { 
     name: "Alice Johnson", 
