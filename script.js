@@ -157,26 +157,26 @@ const sampleFriends = [
   {
     name: "Rajan",
     company: "digtinctive",
-    role: "Data Analyst",
+    role: '"Data Analyst"',
     message: "Watch 'Dark' Series",
     photo: "./assets/avatar/a1.jpg",
-    link: "#"
+    link: "https://github.com/rajannnnnnn"
   },
   {
     name: "Rajkumar",
     company: "everestims",
     role: "Automation Engineer",
-    message: "Be Motivated",
+    message: '"Be Motivated"',
     photo: "./assets/avatar/a2.jpg",
-    link: "#"
+    link: "https://www.linkedin.com/in/rajkumar-k-9bb1b5337/"
   },
   {
     name: "Abishake",
     company: "gadaget computer",
     role: "QA Engineer",
-    message: "Explore untill You Die",
+    message: '"Explore untill You Die"',
     photo: "./assets/avatar/a3.jpg",
-    link: "#"
+    link: "https://www.linkedin.com/in/abishake2003/"
   }
 ];
 
