@@ -168,7 +168,7 @@ const sampleFriends = [
     role: "Automation Engineer",
     message: '"Be Motivated"',
     photo: "./assets/avatar/a2.jpg",
-    link: "https://www.linkedin.com/in/rajkumar-k-9bb1b5337/"
+    link: "https://github.com/RajkumarKOfficial"
   },
   {
     name: "Abishake",
