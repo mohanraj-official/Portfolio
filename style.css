@@ -1187,46 +1187,58 @@ footer {
 
 
 
-/* Recruiter-first portfolio overview */
-.project-overview-section{width:min(1180px,92%);margin:0 auto;padding:82px 0 76px;color:var(--text-color,#edf4ff)}
-.overview-heading{text-align:center;max-width:760px;margin:0 auto 32px}
-.overview-eyebrow{display:inline-block;color:#57c7f5;text-transform:uppercase;letter-spacing:2px;font-size:.76rem;font-weight:800;margin-bottom:10px}
-.overview-heading h2{font-size:clamp(1.9rem,4vw,2.65rem);line-height:1.15;margin:0 0 12px;color:inherit}
-.overview-heading p{margin:0;color:#aebed1;font-size:1rem;line-height:1.7}
-.overview-category-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;margin-bottom:38px}
-.overview-category{min-width:0;min-height:142px;padding:17px 12px;border:1px solid rgba(132,163,190,.23);border-radius:15px;background:linear-gradient(145deg,rgba(20,39,61,.96),rgba(12,24,40,.96));color:#eaf4ff;text-align:left;display:flex;flex-direction:column;align-items:flex-start;cursor:pointer;transition:transform .2s,border-color .2s,background .2s}
-.overview-category:hover,.overview-category.active{transform:translateY(-3px);border-color:#38bdf8;background:linear-gradient(145deg,#193955,#102238)}
-.overview-category:focus-visible,.overview-project-card a:focus-visible{outline:2px solid #7dd3fc;outline-offset:3px}
-.overview-icon{display:grid;place-items:center;min-width:37px;height:37px;padding:0 6px;border-radius:10px;background:#0b2c43;color:#7dd3fc;font-size:.78rem;font-weight:900;margin-bottom:14px}
-.overview-category strong{font-size:.91rem;line-height:1.3}
-.overview-category small{color:#aebed1;font-size:.75rem;line-height:1.45;margin-top:6px}
-.overview-project-heading{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0 0 17px}
-.overview-project-heading h3{font-size:1.35rem;margin:0;color:inherit}
-.overview-project-heading span{font-size:.84rem;color:#aebed1}
-.overview-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.overview-project-card{min-width:0;display:flex;flex-direction:column;padding:22px;border-radius:16px;border:1px solid rgba(132,163,190,.2);background:linear-gradient(150deg,rgba(18,33,52,.98),rgba(12,22,37,.98));transition:transform .2s,border-color .2s}
-.overview-project-card:hover{transform:translateY(-4px);border-color:rgba(56,189,248,.7)}
-.overview-card-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}
-.overview-tag{font-size:.66rem;font-weight:900;letter-spacing:1px;color:#7dd3fc;background:#0b2b41;border:1px solid #214a65;border-radius:999px;padding:5px 9px}
-.overview-card-mark{font-size:.73rem;font-weight:800;color:#71869d}
-.overview-project-card h3{font-size:1.12rem;line-height:1.4;margin:0 0 9px;color:#f2f7ff}
-.overview-project-card p{font-size:.9rem;line-height:1.65;color:#aebed1;margin:0 0 18px}
-.overview-tools{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;margin-bottom:19px}
-.overview-tools span{font-size:.72rem;color:#d7e5f3;background:#172a40;border:1px solid #293e55;border-radius:6px;padding:4px 8px}
-.overview-project-card>a{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#7dd3fc;font-size:.88rem;font-weight:800;text-decoration:none;border-top:1px solid rgba(132,163,190,.16);padding-top:15px}
+/* Compact, searchable project explorer — dashboard-inspired accent palette */
+.project-overview-section{width:min(1120px,92%);margin:0 auto;padding:52px 0 48px;color:var(--text-color,#edf4ff)}
+.overview-heading{text-align:center;max-width:680px;margin:0 auto 24px}
+.overview-eyebrow{display:inline-block;color:#d77da4;text-transform:uppercase;letter-spacing:1.7px;font-size:.72rem;font-weight:800;margin-bottom:7px}
+.overview-heading h2{font-size:clamp(1.7rem,3.5vw,2.2rem);line-height:1.2;margin:0 0 8px;color:inherit}
+.overview-heading p{margin:0;color:#aebed1;font-size:.92rem;line-height:1.5}
+.overview-toolbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,290px);align-items:start;gap:14px;margin-bottom:18px}
+.overview-category-list{display:flex;flex-wrap:wrap;gap:8px}
+.overview-category{border:1px solid rgba(174,190,209,.25);border-radius:999px;padding:8px 12px;background:#14263a;color:#d9e5f2;font-size:.8rem;font-weight:700;cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+.overview-category:hover{border-color:#d77da4;color:#fff}
+.overview-category.active{background:#a51e5b;border-color:#a51e5b;color:#fff;box-shadow:0 3px 10px rgba(165,30,91,.22)}
+.overview-category:focus-visible,.overview-search input:focus-visible,.overview-search button:focus-visible,.overview-project-card a:focus-visible{outline:2px solid #e6a0bf;outline-offset:3px}
+.overview-search{display:flex;align-items:center;gap:9px;min-width:0;padding:0 12px;border:1px solid rgba(174,190,209,.25);border-radius:10px;background:#101f31;color:#b9c8d8}
+.overview-search>i{font-size:.85rem;color:#d77da4}
+.overview-search input{width:100%;min-width:0;height:39px;border:0;outline:0;background:transparent;color:#f3f6fb;font:inherit;font-size:.84rem}
+.overview-search input::placeholder{color:#8294a9}
+.overview-search button{border:0;background:transparent;color:#d9e5f2;font-size:1.2rem;cursor:pointer}
+.overview-list-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 10px}
+.overview-list-heading h3{font-size:1.08rem;margin:0;color:inherit}
+.overview-list-heading span{font-size:.78rem;color:#aebed1}
+.overview-project-panel{max-height:410px;overflow-y:auto;overscroll-behavior:contain;padding:3px 8px 3px 3px;border-radius:12px;scrollbar-color:#a51e5b #14263a;scrollbar-width:thin}
+.overview-project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.overview-project-card{min-width:0;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:5px 12px;padding:13px 15px;border:1px solid rgba(132,163,190,.2);border-left:3px solid #a51e5b;border-radius:10px;background:linear-gradient(135deg,rgba(21,39,59,.97),rgba(13,27,43,.97));transition:border-color .18s,background .18s}
+.overview-project-card:hover{border-color:rgba(215,125,164,.7);background:linear-gradient(135deg,#1a3048,#12243a)}
+.overview-card-top{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 2px}
+.overview-tag{font-size:.63rem;font-weight:900;letter-spacing:.65px;color:#e6a0bf;background:rgba(165,30,91,.14);border:1px solid rgba(215,125,164,.28);border-radius:5px;padding:3px 7px}
+.overview-card-mark{font-size:.67rem;font-weight:800;color:#71869d}
+.overview-project-card h3{font-size:.92rem;line-height:1.35;margin:0;color:#f2f7ff}
+.overview-project-card p{grid-column:1/-1;font-size:.78rem;line-height:1.45;color:#aebed1;margin:0 0 3px}
+.overview-tools{display:flex;flex-wrap:wrap;gap:5px;min-width:0}
+.overview-tools span{font-size:.66rem;color:#d7e5f3;background:#172a40;border:1px solid #293e55;border-radius:5px;padding:3px 6px}
+.overview-project-card>a{justify-self:end;align-self:center;color:#e6a0bf;font-size:.75rem;font-weight:800;text-decoration:none;white-space:nowrap}
 .overview-project-card>a:hover{text-decoration:underline}
-.overview-planned-card{border-style:dashed;background:linear-gradient(150deg,rgba(28,34,43,.98),rgba(17,24,35,.98))}
+.overview-project-card[data-project-category="Machine Learning"]{border-left-color:#a78bfa}
+.overview-project-card[data-project-category="Machine Learning"] .overview-tag{color:#c4b5fd;background:rgba(139,92,246,.12);border-color:rgba(167,139,250,.35)}
+.overview-project-card[data-project-category="Power BI"]{border-left-color:#f2c94c}
+.overview-project-card[data-project-category="Power BI"] .overview-tag{color:#f5d76e;background:rgba(242,201,76,.1);border-color:rgba(242,201,76,.32)}
+.overview-project-card[data-project-category="Python"]{border-left-color:#5da9e9}
+.overview-project-card[data-project-category="Python"] .overview-tag{color:#8fc8fa;background:rgba(93,169,233,.12);border-color:rgba(93,169,233,.32)}
+.overview-project-card[data-project-category="Excel"]{border-left-color:#46b881}
+.overview-project-card[data-project-category="Excel"] .overview-tag{color:#7ce0ae;background:rgba(70,184,129,.1);border-color:rgba(70,184,129,.32)}
+.overview-project-card[data-project-category="SQL"]{border-left-color:#e879b0}
+.overview-project-card[data-project-category="SQL"] .overview-tag{color:#f0a4cb;background:rgba(232,121,176,.1);border-color:rgba(232,121,176,.32)}
+.overview-project-card[data-project-category="Data Engineering"]{border-left-color:#48c6cf}
+.overview-project-card[data-project-category="Data Engineering"] .overview-tag{color:#81e1e5;background:rgba(72,198,207,.1);border-color:rgba(72,198,207,.32)}
+.overview-planned-card{border-style:dashed;background:rgba(28,34,43,.75)}
 .overview-planned-card .overview-tag{color:#fcd34d;background:#332b18;border-color:#635126}
-.overview-coming-soon{color:#fcd34d;font-size:.86rem;font-weight:800;border-top:1px solid rgba(132,163,190,.16);padding-top:15px}
-.overview-footer{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:23px;color:#aebed1;font-size:.84rem}
-.overview-footer a{color:#7dd3fc;text-decoration:none;font-weight:800}
+.overview-coming-soon{justify-self:end;color:#fcd34d;font-size:.74rem;font-weight:800}
+.overview-no-results{padding:28px 12px;text-align:center;color:#aebed1;font-size:.88rem}
+.overview-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px;color:#aebed1;font-size:.78rem}
+.overview-footer a{color:#e6a0bf;text-decoration:none;font-weight:800}
 .overview-footer a:hover{text-decoration:underline}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin-top:24px}
-.hero-secondary-button{display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;border:1px solid rgba(125,211,252,.65);border-radius:7px;color:#eaf4ff;text-decoration:none;font-weight:700;transition:background .2s}
-.hero-secondary-button:hover{background:rgba(56,189,248,.12)}
-.hero-skill-line{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:25px}
-.hero-skill-line span{padding:6px 11px;border:1px solid rgba(125,211,252,.25);border-radius:999px;background:rgba(11,34,54,.65);color:#c8eaff;font-size:.78rem}
-@media(max-width:1100px){.overview-category-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.overview-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:640px){.project-overview-section{padding:58px 0}.overview-category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.overview-category{min-height:130px;padding:14px}.overview-project-grid{grid-template-columns:1fr}.overview-project-heading{align-items:flex-start;flex-direction:column;gap:5px}.overview-project-card{padding:19px}.hero-skill-line{gap:7px}}
-
-.overview-project-card[hidden]{display:none!important}
+.overview-project-card[hidden],.overview-search button[hidden],.overview-no-results[hidden]{display:none!important}
+@media(max-width:800px){.overview-toolbar{grid-template-columns:1fr}.overview-search{max-width:none}.overview-project-grid{grid-template-columns:1fr}.overview-project-panel{max-height:390px}}
+@media(max-width:520px){.project-overview-section{padding:42px 0}.overview-category-list{gap:6px}.overview-category{padding:7px 10px;font-size:.74rem}.overview-project-panel{max-height:360px}.overview-project-card{padding:12px}.overview-project-card>a{font-size:.7rem}.overview-footer{flex-direction:column}}
