@@ -200,3 +200,27 @@ function renderFriends(friends) {
 }
 
 renderFriends(sampleFriends);
+
+
+// Homepage project-category filter
+(function () {
+  const categoryButtons = document.querySelectorAll('[data-overview-category]');
+  const projectCards = document.querySelectorAll('[data-project-category]');
+  const resultsLabel = document.getElementById('overview-results');
+  if (!categoryButtons.length || !projectCards.length) return;
+  categoryButtons.forEach(button => button.addEventListener('click', () => {
+    const selected = button.dataset.overviewCategory;
+    let visibleCount = 0;
+    categoryButtons.forEach(item => {
+      const active = item === button;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
+    projectCards.forEach(card => {
+      const visible = selected === 'All' || card.dataset.projectCategory === selected;
+      card.hidden = !visible;
+      if (visible) visibleCount++;
+    });
+    if (resultsLabel) resultsLabel.textContent = selected === 'All' ? 'Showing all featured projects' : visibleCount + ' project' + (visibleCount === 1 ? '' : 's') + ' in ' + selected;
+  }));
+})();
