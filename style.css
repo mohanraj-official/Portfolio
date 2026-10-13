@@ -1248,3 +1248,16 @@ footer {
 .hero-secondary-button:hover{background:rgba(56,189,248,.12)}
 .hero-skill-line{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:25px}
 .hero-skill-line span{padding:6px 11px;border:1px solid rgba(125,211,252,.25);border-radius:999px;background:rgba(11,34,54,.65);color:#c8eaff;font-size:.78rem}
+
+
+/* Minimal project cards: details stay in native tooltips */
+.overview-project-panel{max-height:none;overflow:visible;padding:0;}
+.overview-project-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+.overview-project-card{grid-template-columns:minmax(0,1fr) auto;align-content:center;gap:10px;padding:16px 17px;min-height:92px;cursor:default;}
+.overview-project-card .overview-tag{grid-column:1/-1;justify-self:start;}
+.overview-project-card h3{font-size:.92rem;line-height:1.35;}
+.overview-project-card>a{font-size:.76rem;}
+.overview-project-card p,.overview-project-card .overview-tools,.overview-card-top,.overview-card-mark{display:none!important;}
+.overview-project-card:hover{transform:translateY(-2px);box-shadow:0 7px 20px rgba(0,0,0,.14);}
+@media(max-width:900px){.overview-project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:560px){.overview-project-grid{grid-template-columns:1fr;}.overview-project-card{min-height:80px;}}
