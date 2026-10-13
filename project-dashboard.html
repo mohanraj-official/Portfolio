@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Mohanraj's portfolio across machine learning, Power BI, Python, Excel, SQL, and data engineering.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Project Dashboard | Mohanraj</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1220;--panel:#111c2f;--panel2:#16243a;--line:#263750;--text:#edf4ff;--muted:#a8b7cc;--accent:#38bdf8;--accent2:#7dd3fc;--green:#86efac;--amber:#fcd34d}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#142844 0%,var(--bg) 48%);color:var(--text);font:16px/1.6 "Segoe UI",Tahoma,Geneva,Verdana,sans-serif;min-height:100vh}
+    a{color:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(8,15,27,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(148,163,184,.16)}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:800;letter-spacing:.3px;text-decoration:none;font-size:1.15rem}.brand span{color:var(--accent)}
+    .navlinks{display:flex;align-items:center;gap:20px}.navlinks a{color:var(--muted);text-decoration:none;font-size:.94rem}.navlinks a:hover,.navlinks a[aria-current=page]{color:var(--accent2)}
+    .hero{padding:70px 0 34px}.eyebrow{color:var(--accent2);text-transform:uppercase;letter-spacing:2px;font-size:.76rem;font-weight:800}.hero h1{font-size:clamp(2.2rem,5vw,3.7rem);line-height:1.12;letter-spacing:-1.5px;margin:12px 0 16px;max-width:850px}.hero p{max-width:720px;color:var(--muted);font-size:1.08rem;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:10px 15px;text-decoration:none;font-weight:700;font-size:.92rem}.btn.primary{background:var(--accent);color:#071321;border-color:var(--accent)}.btn:hover{transform:translateY(-1px)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:26px 0 18px}.section-head h2{font-size:1.35rem;margin:0}.section-head p{color:var(--muted);margin:3px 0 0;font-size:.9rem}
+    .category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.category{border:1px solid var(--line);background:linear-gradient(145deg,rgba(22,36,58,.94),rgba(14,24,41,.95));border-radius:15px;padding:18px;text-align:left;min-height:150px;color:var(--text);cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;transition:border-color .2s,transform .2s,background .2s}.category:hover,.category.active{border-color:var(--accent);transform:translateY(-3px);background:linear-gradient(145deg,#193653,#111c2f)}.category:focus-visible,.btn:focus-visible,.repo-link:focus-visible,input:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+    .cat-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#0c2940;color:var(--accent2);font-weight:900;font-size:1.05rem;margin-bottom:13px}.category strong{font-size:1rem}.category small{color:var(--muted);margin-top:4px;font-size:.83rem}.category .count{margin-top:auto;padding-top:12px;color:var(--accent2);font-size:.78rem;font-weight:700}
+    .portfolio-tile{border-style:dashed}.portfolio-tile .cat-icon{background:#20372f;color:var(--green)}
+    .toolbar{display:flex;gap:12px;align-items:center;margin:22px 0 16px;flex-wrap:wrap}.search{flex:1;min-width:230px;background:#0e192a;border:1px solid var(--line);color:var(--text);padding:12px 14px;border-radius:10px;font:inherit}.filter-label{font-size:.85rem;color:var(--muted)}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.project{display:flex;flex-direction:column;background:rgba(17,28,47,.9);border:1px solid var(--line);border-radius:15px;padding:20px;min-height:250px}.project-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.project h3{font-size:1.08rem;line-height:1.35;margin:0}.tag{white-space:nowrap;border:1px solid #285273;color:var(--accent2);background:#10283c;border-radius:999px;padding:3px 8px;font-size:.7rem;font-weight:800}.tag.planned{color:var(--amber);border-color:#665127;background:#302719}.project p{color:var(--muted);font-size:.91rem;margin:13px 0}.tools{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 17px}.tools span{font-size:.74rem;background:#1a2940;border:1px solid #2b3b53;border-radius:6px;padding:3px 7px;color:#d1ddec}.project-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}.project-category{color:var(--muted);font-size:.78rem}.repo-link{color:var(--accent2);text-decoration:none;font-weight:800;font-size:.88rem}.repo-link:hover{text-decoration:underline}.empty{border:1px dashed var(--line);border-radius:12px;padding:28px;text-align:center;color:var(--muted);grid-column:1/-1}
+    .note{margin:25px 0 60px;border:1px solid var(--line);background:rgba(17,28,47,.6);border-radius:13px;padding:16px 18px;color:var(--muted);font-size:.88rem}.note strong{color:var(--text)}footer{border-top:1px solid rgba(148,163,184,.16);padding:24px 0;color:var(--muted);font-size:.83rem}footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:900px){.category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:620px){.wrap{width:min(100% - 28px,1160px)}.nav{min-height:62px}.navlinks{gap:12px}.navlinks a{font-size:.82rem}.hero{padding-top:48px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.category{padding:14px;min-height:145px}.projects-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.hero h1{letter-spacing:-.8px}}
+    @media(max-width:390px){.navlinks{gap:8px}.navlinks a{font-size:.75rem}.category-grid{grid-template-columns:1fr 1fr}.category small{font-size:.76rem}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Mohanraj<span>.</span></a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="index.html">Portfolio Home</a>
+        <a href="project-dashboard.html" aria-current="page">Projects</a>
+        <a href="https://github.com/mohanraj-official" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Selected work · Continuously growing</div>
+      <h1>Project Dashboard</h1>
+      <p>A structured view of my work across analytics, machine learning, business intelligence, and data engineering. Choose a discipline to explore projects, tools, and source code.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#project-list">Explore projects ↓</a>
+        <a class="btn" href="https://github.com/mohanraj-official" target="_blank" rel="noopener noreferrer">View GitHub profile ↗</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="categories-title">
+      <div class="section-head">
+        <div><h2 id="categories-title">Explore by discipline</h2><p>Select a category to filter the project library.</p></div>
+      </div>
+      <div class="category-grid" id="category-grid">
+        <a class="category portfolio-tile" href="index.html" style="text-decoration:none">
+          <span class="cat-icon" aria-hidden="true">↗</span><strong>Portfolio</strong><small>Profile, experience, skills and contact</small><span class="count">Open main portfolio →</span>
+        </a>
+        <button class="category" type="button" data-category="Machine Learning" aria-pressed="false"><span class="cat-icon" aria-hidden="true">ML</span><strong>Machine Learning</strong><small>Classification and model evaluation</small><span class="count" data-count="Machine Learning">2 projects</span></button>
+        <button class="category" type="button" data-category="Power BI" aria-pressed="false"><span class="cat-icon" aria-hidden="true">BI</span><strong>Power BI</strong><small>Interactive reporting and insights</small><span class="count" data-count="Power BI">2 projects</span></button>
+        <button class="category" type="button" data-category="Python" aria-pressed="false"><span class="cat-icon" aria-hidden="true">Py</span><strong>Python</strong><small>Analysis, EDA and automation</small><span class="count" data-count="Python">1 project</span></button>
+        <button class="category" type="button" data-category="Excel" aria-pressed="false"><span class="cat-icon" aria-hidden="true">XLS</span><strong>Excel</strong><small>Data cleaning and reporting</small><span class="count" data-count="Excel">1 project</span></button>
+        <button class="category" type="button" data-category="SQL" aria-pressed="false"><span class="cat-icon" aria-hidden="true">SQL</span><strong>SQL</strong><small>Queries and customer analytics</small><span class="count" data-count="SQL">1 project</span></button>
+        <button class="category" type="button" data-category="Data Engineering" aria-pressed="false"><span class="cat-icon" aria-hidden="true">DE</span><strong>Data Engineering</strong><small>ETL/ELT, orchestration and warehouses</small><span class="count" data-count="Data Engineering">In progress</span></button>
+      </div>
+    </section>
+
+    <section id="project-list" aria-labelledby="project-list-title">
+      <div class="section-head">
+        <div><h2 id="project-list-title">Project library</h2><p id="results-summary" aria-live="polite">Browse all featured projects.</p></div>
+      </div>
+      <div class="toolbar">
+        <input class="search" id="project-search" type="search" placeholder="Search projects or technologies…" aria-label="Search projects or technologies">
+        <span class="filter-label" id="active-filter">Showing: All categories</span>
+        <button class="btn" id="clear-filter" type="button">Reset filters</button>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <aside class="note">
+      <strong>How this library grows:</strong> New projects can be added to the project list without redesigning this page. Each entry should include the problem, tools, approach, validated results, and a link to its repository or live demo. The Data Engineering section is marked as in progress until a complete pipeline project is published.
+    </aside>
+  </main>
+
+  <footer><div class="wrap"><span>© <span id="year"></span> Mohanraj S</span><span>Built for clear, recruiter-friendly project discovery.</span></div></footer>
+
+  <script>
+    // Add future projects here. Keep repository URLs public and verify all metrics before publishing.
+    const PROJECTS = [
+      {title:"Credit Card Fraud Detection",category:"Machine Learning",description:"Explore transaction patterns and compare classification approaches for a fraud-detection use case.",tools:["Python","Pandas","Scikit-learn","Model evaluation"],url:"https://github.com/mohanraj-official/Machine_Learning-Credit-Card-Fraud-Detection",status:"Available"},
+      {title:"Heart Health Prediction",category:"Machine Learning",description:"A machine-learning practice project focused on exploratory analysis and classification. Review the repository methodology before interpreting health-related findings.",tools:["Python","Pandas","Scikit-learn"],url:"https://github.com/mohanraj-official/heart_predict",status:"Available"},
+      {title:"Bank Loan Performance Analysis",category:"Power BI",description:"A business intelligence project exploring loan-performance indicators and reporting metrics.",tools:["Power BI","DAX","Data modeling"],url:"https://github.com/mohanraj-official/PowerBI-Bank_loan_Performance_Analysis",status:"Available"},
+      {title:"Instagram Performance Dashboard",category:"Power BI",description:"A dashboard project for exploring Instagram performance metrics and API-driven reporting workflows.",tools:["Power BI","API workflow","Data visualization"],url:"https://github.com/mohanraj-official/InstaScope",status:"Available"},
+      {title:"Marketing Campaign Performance Insights",category:"Python",description:"Analyze campaign responses and customer segments to identify patterns that can support marketing decisions.",tools:["Python","Pandas","EDA","Matplotlib"],url:"https://github.com/mohanraj-official/Python---Marketing-Campaign-Performance-Insights",status:"Available"},
+      {title:"Healthcare Data Analysis",category:"Excel",description:"An Excel-based healthcare analysis project covering data cleaning, transformation, and exploratory reporting.",tools:["Excel","Data cleaning","Reporting"],url:"https://github.com/mohanraj-official/Excel-Medical_Healthcare_Analysis",status:"Available"},
+      {title:"E-Commerce Customer Churn Analysis",category:"SQL",description:"Use SQL to explore customer churn, segment customer behavior, and investigate factors associated with retention.",tools:["MySQL","SQL","Customer analytics"],url:"https://github.com/mohanraj-official/MySQL-E-Commerce_Customer_churn_Analysis",status:"Available"},
+      {title:"End-to-End Data Pipeline",category:"Data Engineering",description:"Planned project: build a documented ingestion-to-transformation pipeline with data-quality checks, orchestration, and a warehouse or analytics layer.",tools:["ETL/ELT","Data quality","Orchestration"],url:"",status:"Planned"}
+    ];
+
+    const grid = document.getElementById("projects-grid");
+    const search = document.getElementById("project-search");
+    const summary = document.getElementById("results-summary");
+    const activeFilter = document.getElementById("active-filter");
+    const categoryButtons = [...document.querySelectorAll("[data-category]")];
+    let selectedCategory = "All";
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+    }
+    function render() {
+      const term = search.value.trim().toLowerCase();
+      const visible = PROJECTS.filter(project => {
+        const categoryMatch = selectedCategory === "All" || project.category === selectedCategory;
+        const haystack = [project.title,project.category,project.description,...project.tools].join(" ").toLowerCase();
+        return categoryMatch && haystack.includes(term);
+      });
+      grid.innerHTML = visible.length ? visible.map(project => {
+        const planned = project.status === "Planned";
+        return '<article class="project"><div class="project-top"><h3>'+escapeHtml(project.title)+'</h3><span class="tag '+(planned?'planned':'')+'">'+(planned?'Planned':'Project')+'</span></div><p>'+escapeHtml(project.description)+'</p><div class="tools">'+project.tools.map(tool=>'<span>'+escapeHtml(tool)+'</span>').join("")+'</div><div class="project-bottom"><span class="project-category">'+escapeHtml(project.category)+'</span>'+(project.url?'<a class="repo-link" href="'+escapeHtml(project.url)+'" target="_blank" rel="noopener noreferrer">View repository ↗</a>':'<span class="project-category">Coming soon</span>')+'</div></article>';
+      }).join("") : '<div class="empty">No projects match your search. Try another keyword or reset the filters.</div>';
+      summary.textContent = visible.length + (visible.length === 1 ? " project shown." : " projects shown.");
+      activeFilter.textContent = "Showing: " + (selectedCategory === "All" ? "All categories" : selectedCategory);
+      categoryButtons.forEach(button => {
+        const active = button.dataset.category === selectedCategory;
+        button.classList.toggle("active",active);
+        button.setAttribute("aria-pressed",String(active));
+      });
+    }
+    categoryButtons.forEach(button => button.addEventListener("click", () => {
+      selectedCategory = button.dataset.category;
+      render();
+      document.getElementById("project-list").scrollIntoView({behavior:"smooth",block:"start"});
+    }));
+    search.addEventListener("input",render);
+    document.getElementById("clear-filter").addEventListener("click",()=>{selectedCategory="All";search.value="";render();});
+    document.getElementById("year").textContent = new Date().getFullYear();
+    render();
+  </script>
+</body>
+</html>
