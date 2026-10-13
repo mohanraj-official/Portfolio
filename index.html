@@ -30,7 +30,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#testimonial">Testimonial</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="project-dashboard.html">Project Dashboard</a></li>
                 <li><a href="#tech-stack">Tech stack</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -46,6 +45,35 @@
         </div>
     </section>
 
+    <!-- Recruiter-first project overview -->
+    <section id="project-overview" class="project-overview-section" aria-labelledby="overview-title">
+        <div class="overview-heading">
+            <span class="overview-eyebrow">Portfolio at a glance</span>
+            <h2 id="overview-title">Explore My Data Projects</h2>
+            <p>Browse work by skill area, review the tools used, and open the source repositories.</p>
+        </div>
+        <div class="overview-category-grid" role="group" aria-label="Filter projects by category">
+            <button class="overview-category active" type="button" data-overview-category="All" aria-pressed="true"><span class="overview-icon">✦</span><strong>All Projects</strong><small>Complete overview</small></button>
+            <button class="overview-category" type="button" data-overview-category="Machine Learning" aria-pressed="false"><span class="overview-icon">ML</span><strong>Machine Learning</strong><small>Models and evaluation</small></button>
+            <button class="overview-category" type="button" data-overview-category="Power BI" aria-pressed="false"><span class="overview-icon">BI</span><strong>Power BI</strong><small>Dashboards and KPIs</small></button>
+            <button class="overview-category" type="button" data-overview-category="Python" aria-pressed="false"><span class="overview-icon">Py</span><strong>Python</strong><small>Analysis and EDA</small></button>
+            <button class="overview-category" type="button" data-overview-category="Excel" aria-pressed="false"><span class="overview-icon">XLS</span><strong>Excel</strong><small>Cleaning and reporting</small></button>
+            <button class="overview-category" type="button" data-overview-category="SQL" aria-pressed="false"><span class="overview-icon">SQL</span><strong>SQL</strong><small>Queries and analytics</small></button>
+            <button class="overview-category" type="button" data-overview-category="Data Engineering" aria-pressed="false"><span class="overview-icon">DE</span><strong>Data Engineering</strong><small>Pipeline project in progress</small></button>
+        </div>
+        <div class="overview-project-heading"><h3>Featured Work</h3><span id="overview-results" aria-live="polite">Showing all featured projects</span></div>
+        <div class="overview-project-grid" id="overview-project-grid">
+            <article class="overview-project-card" data-project-category="Machine Learning"><div class="overview-card-top"><span class="overview-tag">MACHINE LEARNING</span><span class="overview-card-mark">01</span></div><h3>Credit Card Fraud Detection</h3><p>Explore transaction patterns and classification approaches for fraud detection.</p><div class="overview-tools"><span>Python</span><span>Pandas</span><span>Scikit-learn</span></div><a href="https://github.com/mohanraj-official/Machine_Learning-Credit-Card-Fraud-Detection" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a></article>
+            <article class="overview-project-card" data-project-category="Power BI"><div class="overview-card-top"><span class="overview-tag">POWER BI</span><span class="overview-card-mark">02</span></div><h3>Bank Loan Performance Analysis</h3><p>Business intelligence reporting focused on loan performance, risk indicators, and key metrics.</p><div class="overview-tools"><span>Power BI</span><span>DAX</span><span>Data modeling</span></div><a href="https://github.com/mohanraj-official/PowerBI-Bank_loan_Performance_Analysis" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a></article>
+            <article class="overview-project-card" data-project-category="Python"><div class="overview-card-top"><span class="overview-tag">PYTHON</span><span class="overview-card-mark">03</span></div><h3>Marketing Campaign Insights</h3><p>Analyze customer responses and campaign segments to support marketing decisions.</p><div class="overview-tools"><span>Python</span><span>Pandas</span><span>EDA</span></div><a href="https://github.com/mohanraj-official/Python---Marketing-Campaign-Performance-Insights" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a></article>
+            <article class="overview-project-card" data-project-category="Excel"><div class="overview-card-top"><span class="overview-tag">EXCEL</span><span class="overview-card-mark">04</span></div><h3>Healthcare Data Analysis</h3><p>Explore healthcare data through cleaning, structured analysis, and reporting.</p><div class="overview-tools"><span>Excel</span><span>Data cleaning</span><span>Reporting</span></div><a href="https://github.com/mohanraj-official/Excel-Medical_Healthcare_Analysis" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a></article>
+            <article class="overview-project-card" data-project-category="SQL"><div class="overview-card-top"><span class="overview-tag">SQL</span><span class="overview-card-mark">05</span></div><h3>E-Commerce Customer Churn</h3><p>Use customer and purchase data to investigate churn patterns and retention factors.</p><div class="overview-tools"><span>MySQL</span><span>SQL</span><span>Customer analytics</span></div><a href="https://github.com/mohanraj-official/MySQL-E-Commerce_Customer_churn_Analysis" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a></article>
+            <article class="overview-project-card" data-project-category="Power BI"><div class="overview-card-top"><span class="overview-tag">POWER BI</span><span class="overview-card-mark">06</span></div><h3>Instagram Performance Dashboard</h3><p>Explore social performance metrics and an API-driven reporting workflow.</p><div class="overview-tools"><span>Power BI</span><span>API workflow</span><span>Visualization</span></div><a href="https://github.com/mohanraj-official/InstaScope" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a></article>
+            <article class="overview-project-card" data-project-category="Machine Learning"><div class="overview-card-top"><span class="overview-tag">MACHINE LEARNING</span><span class="overview-card-mark">07</span></div><h3>Heart Health Prediction</h3><p>A classification practice project focused on exploratory analysis and model building.</p><div class="overview-tools"><span>Python</span><span>Pandas</span><span>Scikit-learn</span></div><a href="https://github.com/mohanraj-official/heart_predict" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a></article>
+            <article class="overview-project-card overview-planned-card" data-project-category="Data Engineering"><div class="overview-card-top"><span class="overview-tag">DATA ENGINEERING</span><span class="overview-card-mark">NEXT</span></div><h3>End-to-End Data Pipeline</h3><p>Planned portfolio build: ingestion, transformations, data-quality checks, and orchestration.</p><div class="overview-tools"><span>ETL / ELT</span><span>Data quality</span><span>Orchestration</span></div><span class="overview-coming-soon">Project in progress</span></article>
+        </div>
+        <div class="overview-footer"><span>More projects will be added to these categories over time.</span><a href="https://github.com/mohanraj-official" target="_blank" rel="noopener noreferrer">Browse all repositories ↗</a></div>
+    </section>
 
     <!-- About Section-->
     <section id="about" class="about-section">
@@ -133,8 +161,6 @@
     <!-- Projects Carousel -->
     <section id="projects">
         <h2>DATA ANALYSIS PROJECTS</h2>
-        <p style="max-width:760px;margin:-22px auto 28px;color:#cbd5e1;">Browse projects by discipline in the dedicated project dashboard.</p>
-        <a href="project-dashboard.html" class="cta-button" style="margin-bottom:32px;">Explore Project Dashboard <span aria-hidden="true">→</span></a>
         <div class="swiper project-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
