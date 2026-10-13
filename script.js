@@ -202,25 +202,48 @@ function renderFriends(friends) {
 renderFriends(sampleFriends);
 
 
-// Homepage project-category filter
+// Compact project explorer: category filters + live search
 (function () {
-  const categoryButtons = document.querySelectorAll('[data-overview-category]');
-  const projectCards = document.querySelectorAll('[data-project-category]');
+  const categoryButtons = [...document.querySelectorAll('[data-overview-category]')];
+  const projectCards = [...document.querySelectorAll('#overview-project-grid [data-project-category]')];
   const resultsLabel = document.getElementById('overview-results');
+  const searchInput = document.getElementById('overview-search-input');
+  const clearButton = document.getElementById('overview-search-clear');
+  const noResults = document.getElementById('overview-no-results');
   if (!categoryButtons.length || !projectCards.length) return;
-  categoryButtons.forEach(button => button.addEventListener('click', () => {
-    const selected = button.dataset.overviewCategory;
+
+  let selectedCategory = 'All';
+  function updateProjects() {
+    const query = (searchInput?.value || '').trim().toLowerCase();
     let visibleCount = 0;
+    projectCards.forEach(card => {
+      const categoryMatch = selectedCategory === 'All' || card.dataset.projectCategory === selectedCategory;
+      const textMatch = !query || card.textContent.toLowerCase().includes(query);
+      const visible = categoryMatch && textMatch;
+      card.hidden = !visible;
+      if (visible) visibleCount++;
+    });
+    if (resultsLabel) {
+      resultsLabel.textContent = visibleCount + ' project' + (visibleCount === 1 ? '' : 's');
+    }
+    if (noResults) noResults.hidden = visibleCount > 0;
+    if (clearButton) clearButton.hidden = !query;
+  }
+
+  categoryButtons.forEach(button => button.addEventListener('click', () => {
+    selectedCategory = button.dataset.overviewCategory;
     categoryButtons.forEach(item => {
       const active = item === button;
       item.classList.toggle('active', active);
       item.setAttribute('aria-pressed', String(active));
     });
-    projectCards.forEach(card => {
-      const visible = selected === 'All' || card.dataset.projectCategory === selected;
-      card.hidden = !visible;
-      if (visible) visibleCount++;
-    });
-    if (resultsLabel) resultsLabel.textContent = selected === 'All' ? 'Showing all featured projects' : visibleCount + ' project' + (visibleCount === 1 ? '' : 's') + ' in ' + selected;
+    updateProjects();
   }));
+  if (searchInput) searchInput.addEventListener('input', updateProjects);
+  if (clearButton) clearButton.addEventListener('click', () => {
+    searchInput.value = '';
+    searchInput.focus();
+    updateProjects();
+  });
+  updateProjects();
 })();
