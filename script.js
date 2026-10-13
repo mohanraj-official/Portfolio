@@ -218,7 +218,8 @@ renderFriends(sampleFriends);
     let visibleCount = 0;
     projectCards.forEach(card => {
       const categoryMatch = selectedCategory === 'All' || card.dataset.projectCategory === selectedCategory;
-      const textMatch = !query || card.textContent.toLowerCase().includes(query);
+      const searchableText = (card.textContent + ' ' + (card.dataset.search || '') + ' ' + (card.getAttribute('title') || '')).toLowerCase();
+      const textMatch = !query || searchableText.includes(query);
       const visible = categoryMatch && textMatch;
       card.hidden = !visible;
       if (visible) visibleCount++;
