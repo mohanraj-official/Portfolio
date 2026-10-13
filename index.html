@@ -45,24 +45,37 @@
         </div>
     </section>
 
-    <!-- Recruiter-first project overview -->
+    <!-- Compact searchable project explorer -->
     <section id="project-overview" class="project-overview-section" aria-labelledby="overview-title">
         <div class="overview-heading">
             <span class="overview-eyebrow">Portfolio at a glance</span>
-            <h2 id="overview-title">Explore My Data Projects</h2>
-            <p>Browse work by skill area, review the tools used, and open the source repositories.</p>
+            <h2 id="overview-title">Explore My Projects</h2>
+            <p>Choose a category or search by project, tool, or skill.</p>
         </div>
-        <div class="overview-category-grid" role="group" aria-label="Filter projects by category">
-            <button class="overview-category active" type="button" data-overview-category="All" aria-pressed="true"><span class="overview-icon">✦</span><strong>All Projects</strong><small>Complete overview</small></button>
-            <button class="overview-category" type="button" data-overview-category="Machine Learning" aria-pressed="false"><span class="overview-icon">ML</span><strong>Machine Learning</strong><small>Models and evaluation</small></button>
-            <button class="overview-category" type="button" data-overview-category="Power BI" aria-pressed="false"><span class="overview-icon">BI</span><strong>Power BI</strong><small>Dashboards and KPIs</small></button>
-            <button class="overview-category" type="button" data-overview-category="Python" aria-pressed="false"><span class="overview-icon">Py</span><strong>Python</strong><small>Analysis and EDA</small></button>
-            <button class="overview-category" type="button" data-overview-category="Excel" aria-pressed="false"><span class="overview-icon">XLS</span><strong>Excel</strong><small>Cleaning and reporting</small></button>
-            <button class="overview-category" type="button" data-overview-category="SQL" aria-pressed="false"><span class="overview-icon">SQL</span><strong>SQL</strong><small>Queries and analytics</small></button>
-            <button class="overview-category" type="button" data-overview-category="Data Engineering" aria-pressed="false"><span class="overview-icon">DE</span><strong>Data Engineering</strong><small>Pipeline project in progress</small></button>
+
+        <div class="overview-toolbar">
+            <div class="overview-category-list" role="group" aria-label="Filter projects by category">
+                <button class="overview-category active" type="button" data-overview-category="All" aria-pressed="true">All Projects</button>
+                <button class="overview-category" type="button" data-overview-category="Machine Learning" aria-pressed="false">Machine Learning</button>
+                <button class="overview-category" type="button" data-overview-category="Power BI" aria-pressed="false">Power BI</button>
+                <button class="overview-category" type="button" data-overview-category="Python" aria-pressed="false">Python</button>
+                <button class="overview-category" type="button" data-overview-category="Excel" aria-pressed="false">Excel</button>
+                <button class="overview-category" type="button" data-overview-category="SQL" aria-pressed="false">SQL</button>
+                <button class="overview-category" type="button" data-overview-category="Data Engineering" aria-pressed="false">Data Engineering</button>
+            </div>
+            <label class="overview-search">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input id="overview-search-input" type="search" placeholder="Search projects or tools..." aria-label="Search projects or tools">
+                <button id="overview-search-clear" type="button" aria-label="Clear search" hidden>&times;</button>
+            </label>
         </div>
-        <div class="overview-project-heading"><h3>Featured Work</h3><span id="overview-results" aria-live="polite">Showing all featured projects</span></div>
-        <div class="overview-project-grid" id="overview-project-grid">
+
+        <div class="overview-list-heading">
+            <h3>Projects</h3>
+            <span id="overview-results" aria-live="polite">8 projects</span>
+        </div>
+        <div class="overview-project-panel">
+            <div class="overview-project-grid" id="overview-project-grid">
             <article class="overview-project-card" data-project-category="Machine Learning"><div class="overview-card-top"><span class="overview-tag">MACHINE LEARNING</span><span class="overview-card-mark">01</span></div><h3>Credit Card Fraud Detection</h3><p>Explore transaction patterns and classification approaches for fraud detection.</p><div class="overview-tools"><span>Python</span><span>Pandas</span><span>Scikit-learn</span></div><a href="https://github.com/mohanraj-official/Machine_Learning-Credit-Card-Fraud-Detection" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a></article>
             <article class="overview-project-card" data-project-category="Power BI"><div class="overview-card-top"><span class="overview-tag">POWER BI</span><span class="overview-card-mark">02</span></div><h3>Bank Loan Performance Analysis</h3><p>Business intelligence reporting focused on loan performance, risk indicators, and key metrics.</p><div class="overview-tools"><span>Power BI</span><span>DAX</span><span>Data modeling</span></div><a href="https://github.com/mohanraj-official/PowerBI-Bank_loan_Performance_Analysis" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a></article>
             <article class="overview-project-card" data-project-category="Python"><div class="overview-card-top"><span class="overview-tag">PYTHON</span><span class="overview-card-mark">03</span></div><h3>Marketing Campaign Insights</h3><p>Analyze customer responses and campaign segments to support marketing decisions.</p><div class="overview-tools"><span>Python</span><span>Pandas</span><span>EDA</span></div><a href="https://github.com/mohanraj-official/Python---Marketing-Campaign-Performance-Insights" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a></article>
@@ -73,6 +86,593 @@
             <article class="overview-project-card overview-planned-card" data-project-category="Data Engineering"><div class="overview-card-top"><span class="overview-tag">DATA ENGINEERING</span><span class="overview-card-mark">NEXT</span></div><h3>End-to-End Data Pipeline</h3><p>Planned portfolio build: ingestion, transformations, data-quality checks, and orchestration.</p><div class="overview-tools"><span>ETL / ELT</span><span>Data quality</span><span>Orchestration</span></div><span class="overview-coming-soon">Project in progress</span></article>
         </div>
         <div class="overview-footer"><span>More projects will be added to these categories over time.</span><a href="https://github.com/mohanraj-official" target="_blank" rel="noopener noreferrer">Browse all repositories ↗</a></div>
+    </section>
+
+    <!-- About Section-->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="./assets/a.jpg" alt="Mohanraj profile photo" />
+            </div>
+
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    I am a proficient <span class="highlight">Front-End Developer</span> and <span
+                        class="highlight">Data Analyst</span> with extensive experience in completing various capstone
+                    projects.
+                    Over time, I have honed my skills and consistently strive for excellence in my work. This portfolio
+                    showcases
+                    my projects and expertise, offering a comprehensive view of my professional journey.
+                </p>
+                <p>
+                    Additionally, I have a keen interest in <span class="highlight">Calisthenics</span> and
+                    <span class="highlight">Physical Fitness</span>, with intermediate expertise in
+                    <span class="highlight">Body-Building</span>. I am committed to continuous learning and aim to
+                    enhance my knowledge and abilities every day.
+                </p>
+                <a href="https://drive.google.com/uc?export=download&id=1FTvRAf-fevt0sQ8p1FJ6GBsR1_Od4IGJ"
+                    class="download-btn" target="_blank">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- swiper for testimonial -->
+    <section class="testimonial-section" id="testimonial">
+        <h2 class="section-title">Testimonial</h2>
+
+        <div class="testimonial-container">
+
+    <div class="testimonial-container">
+    <div class="testimonial-card">
+        <p class="testimonial-quote">
+            “As a Data Analyst Trainer at QSpiders, Hyderabad, I focus on building strong foundations in SQL, Excel, Advanced Excel, and Power BI. I design structured sessions with real-world datasets, guide students through hands-on exercises, and ensure they can translate raw data into clear business insights. My goal is to make every learner job-ready with practical skills and confidence in data analysis.”
+        </p>
+        <h3 class="testimonial-author">— Mohanraj S</h3>
+        <span class="testimonial-role">Data Analyst Trainer, QSpiders - Hyderabad</span>
+    </div>
+</div>
+
+
+            <!-- <div class="testimonial-card">
+                <p class="testimonial-quote">
+                    “As a Data Analyst Trainer at Test Yantra, I dedicate each day to mastering SQL and analytics
+                    tools, designing clear and structured training content, and preparing real-world case studies. My
+                    focus is on
+                    delivering practical, hands-on learning experiences that equip students with the skills and
+                    confidence to
+                    solve data challenges effectively.”
+                </p>
+                <h3 class="testimonial-author">— Mohanraj S</h3>
+                <span class="testimonial-role">Data Analyst Trainer, Test Yantra - Bangalore</span>
+            </div> -->
+
+
+            <div class="testimonial-card">
+                <p class="testimonial-quote">
+                    “Leading the QA efforts at Robowaves has been a transformative experience. From crafting over
+                    200 detailed test scenarios to automating workflows on Fireflink, I ensured that quality,
+                    efficiency, and agility went hand-in-hand. Collaborating on the ThinkDirtyApp, I led my team
+                    with clear communication and structured tracking, consistently delivering reliable results
+                    within our Agile sprints.”
+                </p>
+                <h3 class="testimonial-author">— Mohanraj S</h3>
+                <span class="testimonial-role">Agile Team Lead, Robowaves</span>
+            </div>
+
+        
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Projects Carousel -->
+    <section id="projects">
+        <h2>DATA ANALYSIS PROJECTS</h2>
+        <div class="swiper project-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="project-card" onclick="openPopup('project1')">
+                        <img src="assets/credit card.jpg" alt="Project 1" />
+                        <h3>Creditcard Fraud Detection</h3>
+                        <button>View Details</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card" onclick="openPopup('project2')">
+                        <img src="assets/heart attack.jpg" alt="Project 2" />
+                        <h3>Heart Attack Prediction</h3>
+                        <button>View Details</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card" onclick="openPopup('project3')">
+                        <img src="assets/market campaign.jpg" alt="Project 3" />
+                        <h3>Marketing Campaign Performance</h3>
+                        <button>View Details</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card" onclick="openPopup('project4')">
+                        <img src="assets/e-commerce.jpg" alt="Project 4" />
+                        <h3>E-Commerce Customer Churn Analysis</h3>
+                        <button>View Details</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card" onclick="openPopup('project5')">
+                        <img src="assets/bank loan performance.webp" alt="Project 5" />
+                        <h3>Bank Loan Performance Analysis</h3>
+                        <button>View Details</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card" onclick="openPopup('project6')">
+                        <img src="assets/library.webp" alt="Project 6" />
+                        <h3>Library Management System</h3>
+                        <button>View Details</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card" onclick="openPopup('project7')">
+                        <img src="assets/medical healthcare.jpg" alt="Project 7" />
+                        <h3>Healthcare Analysis and Insights</h3>
+                        <button>View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation & Pagination -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </section>
+
+
+
+    <!-- Popups -->
+    <div id="project1" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project1')">&times;</span>
+            <h2>Credit Card Fraud Detection</h2>
+            <p><strong>Duration:</strong> Jan 2024 – Feb 2025</p>
+            <p><strong>Organization:</strong> Entri Elevate</p>
+
+            <p><strong>Overview:</strong> Built ML models to detect fraudulent transactions from credit card data.</p>
+
+            <p><strong>Key Steps:</strong></p>
+            <ul>
+                <li><strong>Data Cleaning:</strong> Handled missing values and applied sampling to balance the dataset.
+                </li>
+                <li><strong>EDA:</strong> Used bar charts, box plots to analyze features like transaction amount and
+                    fraud patterns.</li>
+                <li><strong>Feature Selection:</strong> Removed less relevant attributes and retained key fraud
+                    indicators.</li>
+                <li><strong>Model Building:</strong> Trained Logistic Regression, Random Forest, and XGBoost
+                    classifiers.</li>
+                <li><strong>Evaluation:</strong> Compared models using Precision, Recall, and AUC-ROC metrics.</li>
+                <li><strong>Optimization:</strong> Tuned hyperparameters for better performance.</li>
+                <li><strong>Deployment (Optional):</strong> Designed for real-time fraud detection integration.</li>
+            </ul>
+
+            <p><strong>Tools:</strong> Python, Pandas, Matplotlib, Sklearn, XGBoost</p>
+            <a href="https://github.com/mohanraj-official/Machine_Learning-Credit-Card-Fraud-Detection">GitHub Link</a>
+        </div>
+    </div>
+
+
+
+
+    <div id="project2" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project2')">&times;</span>
+            <h2>Heart Attack Trends: Youth vs Adults (China)</h2>
+            <p><strong>Duration:</strong> Dec 2024 – Jan 2025</p>
+            <p><strong>Organization:</strong> Entri Elevate</p>
+
+            <p><strong>Overview:</strong> Analyzed 270,000 health records to compare heart attack risks between youth
+                (under 30) and adults (over 30) in China.</p>
+
+            <p><strong>Key Steps:</strong></p>
+            <ul>
+                <li><strong>Data Analysis:</strong> Used EDA to uncover patterns based on age, health metrics,
+                    lifestyle, and habits.</li>
+                <li><strong>Risk Indicators:</strong> Identified key features such as blood pressure, cholesterol, BMI,
+                    and physical activity.</li>
+                <li><strong>Model Training:</strong> Built ML models to predict heart attack risk based on age-specific
+                    features.</li>
+                <li><strong>Insights:</strong> Found both age groups at risk, but with different influencing factors.
+                </li>
+            </ul>
+
+            <p><strong>Tools:</strong> Python, Pandas, Sklearn, Matplotlib, Seaborn</p>
+            <a href="https://github.com/mohanraj-official/heart_predict/tree/master">GitHub Link</a>
+        </div>
+    </div>
+
+
+
+
+    <div id="project3" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project3')">&times;</span>
+            <h2>Python - Marketing Campaign Performance Insights</h2>
+            <p><strong>Duration:</strong> Oct 2024</p>
+            <p><strong>Organization:</strong> Entri Elevate</p>
+            <p>In this project, I analyzed the effectiveness of a marketing campaign by examining customer responses,
+                sales data, and various metrics. I began by collecting and cleaning the dataset, which included customer
+                demographics and campaign details.</p>
+            <p>Through exploratory data analysis (EDA), I identified patterns in how different customer groups
+                responded. I segmented customers by age, income, and location to pinpoint responsive audiences.</p>
+            <p>I applied machine learning models like Logistic Regression and Decision Trees to predict campaign
+                success. Accuracy and precision were used to evaluate the models. Based on insights, I recommended
+                targeting specific demographics and offering personalized discounts.</p>
+            <p>Visualizations such as bar and pie charts were created to effectively communicate findings and
+                strategies.</p>
+            <p>This project improved my skills in data analysis, customer segmentation, machine learning, and data
+                visualization.</p>
+            <p><strong>Skills:</strong> Exploratory Data Analysis · Matplotlib · Seaborn · Pandas · Data Cleaning</p>
+            <a href="https://github.com/mohanraj-official/Python---Marketing-Campaign-Performance-Insights">GitHub
+                Link</a>
+        </div>
+    </div>
+
+
+
+    <div id="project4" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project4')">&times;</span>
+            <h2>MySQL - E-Commerce Customer Churn Analysis</h2>
+            <p><strong>Duration:</strong> Sep 2024 - Oct 2024</p>
+            <p><strong>Organization:</strong> Entri Elevate</p>
+            <p>In this project, I analyzed customer churn for an e-commerce platform by studying customer data such as
+                demographics, purchase history, and platform interaction. Using MySQL, I cleaned and explored the data
+                to identify key factors influencing churn, such as purchase frequency and engagement.</p>
+            <p>I applied SQL queries to segment customers and predict churn using machine learning models like Logistic
+                Regression and Decision Trees. The analysis helped identify high-risk customer segments and suggested
+                strategies to reduce churn, such as targeted promotions.</p>
+            <p>This project enhanced my skills in MySQL, customer segmentation, churn analysis, and predictive modeling.
+            </p>
+            <p><strong>Skills:</strong> MySQL · Workbench · DDL · Data Manipulation · Data Control · Data Wrangling</p>
+            <a href="https://github.com/mohanraj-official/MySQL-E-Commerce_Customer_churn_Analysis">GitHub Link</a>
+        </div>
+    </div>
+
+
+
+    <div id="project5" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project5')">&times;</span>
+            <h2>Power BI - Bank Loan Performance Analysis</h2>
+            <p><strong>Duration:</strong> Aug 2024</p>
+            <p>The Bank Loan Performance Analysis project used Power BI to analyze loan data, focusing on loan
+                approvals, defaults, and customer demographics. Data was cleaned and transformed to ensure reliability
+                and accuracy.</p>
+            <p>Interactive dashboards were built to visualize key metrics like default rates, customer income, credit
+                scores, and loan types. These visualizations provided a clear view of customer behavior and loan trends.
+            </p>
+            <p>Insights from trend analysis helped predict future loan performance and identify improvement areas in
+                loan approval and risk management. The outcome was a more data-driven strategy to reduce defaults and
+                optimize lending practices.</p>
+            <p><strong>Skills:</strong> Microsoft Power BI · KPI Dashboards · Data Visualization · Creative
+                Visualization · Data Transformation · Exploratory Trend Analysis (ETA)</p>
+            <a href="https://github.com/mohanraj-official/PowerBI-Bank_loan_Performance_Analysis">GitHub / Dashboard
+                Link</a>
+        </div>
+    </div>
+
+
+
+    <div id="project6" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project6')">&times;</span>
+            <h2>Library Management and Attendance System</h2>
+            <p><strong>Duration:</strong> Jan 2024 – Mar 2024</p>
+            <p><strong>Organization:</strong> Global Institute of Engineering and Technology</p>
+            <p>The Library Attendance Management System is an IoT-based solution designed to automate student attendance
+                using facial recognition technology. It uses a webcam or camera module to capture student faces upon
+                entry and exit, ensuring accurate and efficient attendance tracking.</p>
+            <p>The system was built using Python and OpenCV for facial recognition, with a MySQL database for storing
+                attendance records. I developed the user interface (UI) using HTML, CSS, and JavaScript, which connects
+                with the backend via a XAMPP server.</p>
+            <p>The facial recognition module automatically matches captured images with stored student profiles to log
+                attendance. This significantly reduced manual effort and errors while offering a smooth experience for
+                both students and library staff.</p>
+            <p><strong>Skills:</strong> Facial Recognition · XAMPP · PHP · OpenCV · Internet of Things (IoT)</p>
+
+        </div>
+    </div>
+
+
+
+
+    <div id="project7" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project7')">&times;</span>
+            <h2>Excel - Healthcare Data Analysis and Insights</h2>
+            <p><strong>Tools Used:</strong> Microsoft Excel</p>
+            <p>This project involved analyzing healthcare data to extract meaningful insights related to patient health,
+                hospital performance, and operational efficiency. Data was cleaned, filtered, and transformed using
+                Excel functions and pivot tables.</p>
+            <p>I calculated key performance indicators (KPIs) such as patient recovery rates, hospital stay durations,
+                and demographic breakdowns using statistical functions. These metrics helped identify improvement areas
+                in patient care and hospital resource planning.</p>
+            <p>To communicate findings effectively, I created visualizations like charts, graphs, and dashboards that
+                enabled healthcare professionals to make informed decisions.</p>
+            <p><strong>Skills:</strong> Excel Dashboards · Pivot Tables · DAX · Data Transformation · Data Cleaning ·
+                Data Analytics</p>
+            <a href="https://github.com/mohanraj-official/Excel-Medical_Healthcare_Analysis">Project Sheet / Sample
+                Dashboard</a>
+        </div>
+    </div>
+
+
+
+
+
+    <!--
+    <div id="project2" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('project2')">&times;</span>
+            <h2>Loan Analysis</h2>
+            <p>Analyzed loan approval trends and created dashboards.</p>
+            <p><strong>Tools:</strong> Excel, Power BI, SQL</p>
+            <a href="#">GitHub Link</a>
+        </div>
+    </div>
+-->
+
+
+
+    <!--   tech stack   -->
+    <section id="tech-stack">
+        <h2>My Tech Stack</h2>
+
+        <div class="tech-category">
+            <h3>Programming Languages</h3>
+            <div class="tech-grid">
+                <div class="tech-item"><img src="assets/icons/Python.svg" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/MySQL.svg" alt="SQL">
+                    <p>sql</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h3>Web Technologies</h3>
+            <div class="tech-grid">
+                <div class="tech-item"><img src="assets/icons/HTML5.svg" alt="HTML">
+                    <p>HTML</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/CSS3.svg" alt="CSS">
+                    <p>CSS</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/Node.js.svg" alt="JavaScript">
+                    <p>JavaScript (CDN)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h3>Data Analysis & Visualization</h3>
+            <div class="tech-grid">
+                <div class="tech-item"><img src="assets/icons/NumPy.svg" alt="NumPy">
+                    <p>NumPy</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/Pandas.svg" alt="Pandas">
+                    <p>Pandas</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/Matplotlib.svg" alt="Matplotlib">
+                    <p>Matplotlib</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/seaborn.svg" alt="Seaborn">
+                    <p>Seaborn</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/Excel.svg" alt="Excel">
+                    <p>Excel</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/Power BI.svg" alt="Power BI">
+                    <p>Power BI</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h3>Machine Learning & Tools</h3>
+            <div class="tech-grid">
+                <div class="tech-item"><img src="assets/icons/scikit-learn.svg" alt="Scikit-learn">
+                    <p>Scikit-learn</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/statistics.png" alt="Statistics">
+                    <p>Statistics</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/Jupyter.svg" alt="Google Colab">
+                    <p>Google Colab</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h3>Version Control</h3>
+            <div class="tech-grid">
+                <div class="tech-item"><img src="assets/icons/GitHub.svg" alt="GitHub">
+                    <p>GitHub</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/Git.svg" alt="Git">
+                    <p>Git</p>
+                </div>
+                <div class="tech-item"><img src="assets/icons/GitHub Codespaces.svg" alt="GitHub Codespaces">
+                    <p>GitHub Codespaces</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Certificates -->
+    <section class="certificates-section" id="certificates">
+        <h2 class="section-title">Certificates</h2>
+        <p class="section-subtitle">My verified skills and achievements</p>
+
+        <div class="certificates-container">
+
+            <!-- Certificate Card 1 -->
+            <div class="certificate-card">
+                <img src="assets/certificates/entri_course_completion.jpg" alt="Data Analysis Certificate">
+                <div class="certificate-info">
+                    <h3>Data Analysis</h3>
+                    <p>Entri Elevate</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 2 -->
+            <div class="certificate-card">
+                <img src="assets/certificates/SQL_basic_completion_HR.jpg" alt="SQL Certificate">
+                <div class="certificate-info">
+                    <h3>SQL (Advanced)</h3>
+                    <p>HackerRank</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 3 -->
+            <div class="certificate-card">
+                <img src="assets/certificates/python_basic_completion_HR.jpg" alt="Python Certificate">
+                <div class="certificate-info">
+                    <h3>Python Programming</h3>
+                    <p>HackerRank</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 4 -->
+            <div class="certificate-card">
+                <img src="assets/certificates/Devops_completion.jpg" alt="Devops completion certificate">
+                <div class="certificate-info">
+                    <h3>DevOps</h3>
+                    <p>Infosys</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 5 -->
+            <div class="certificate-card">
+                <img src="assets/certificates/Agile_complition.jpg" alt="Agile Methodology">
+                <div class="certificate-info">
+                    <h3>Agile Methodology</h3>
+                    <p>Infosys</p>
+                </div>
+            </div>
+
+            <!-- Certificate Card 7 -->
+            <div class="certificate-card">
+                <img src="assets/certificates/RoboWaves_Internship.jpg" alt="Automation testing">
+                <div class="certificate-info">
+                    <h3>QA Intern 3 month</h3>
+                    <p>Robo Waves</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- Social media links to connect -->
+    <section class="connection-section" id="connect">
+        <h2 class="section-title">Connect with me</h2>
+        <p class="section-subtitle">Find me across social and professional platforms</p>
+
+        <div class="connection-links">
+            <!-- Social Media -->
+            <a href="https://www.linkedin.com/in/mohanrajofficial/" target="_blank" class="conn-icon linkedin">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/mohanraj-official" target="_blank" class="conn-icon github">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/mohan.drifter" target="_blank" class="conn-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/918248959404" target="_blank" class="conn-icon whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <!-- Professional Platforms -->
+            <a href="https://www.hackerrank.com/profile/mohanraj_offici1" target="_blank" class="conn-icon hackerrank">
+                <i class="fab fa-hackerrank"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="friends-corner">
+        <h2>Friends’ Corner</h2>
+        <div id="friends-container">
+            <!-- Friend cards will be injected here -->
+        </div>
+    </section>
+
+    
+
+
+
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/mgvznbpk" method="POST" id="contact-form">
+            <div class="input-group-row">
+                <label><i class="fas fa-user"></i></label>
+                <input type="text" name="name" placeholder="How can I call you?" required />
+            </div>
+            <div class="input-group-row">
+                <label><i class="fas fa-envelope"></i></label>
+                <input type="email" name="email" placeholder="How can I reach You?" required />
+            </div>
+            <div class="input-group-row">
+                <label><i class="fas fa-comment"></i></label>
+                <textarea name="message" placeholder="Let me know what do you want..." required></textarea>
+            </div>
+            <button type="submit" id="submitButton">Send</button>
+            <div id="responseMessage" style="display:none; margin-top:1rem;"></div>
+        </form>
+
+
+    </section>
+
+
+
+    <footer>
+        <p>&copy; 2025 Mohanraj S. All rights reserved.</p>
+    </footer>
+
+
+    <button id="scrollToTopBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html
+            </div>
+            <p class="overview-no-results" id="overview-no-results" hidden>No projects match your search. Try another keyword or category.</p>
+        </div>
+        <div class="overview-footer"><span>Want to explore more?</span><a href="https://github.com/mohanraj-official" target="_blank" rel="noopener noreferrer">Browse all GitHub repositories ↗</a></div>
     </section>
 
     <!-- About Section-->
