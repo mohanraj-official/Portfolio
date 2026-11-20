@@ -45,81 +45,33 @@
         </div>
     </section>
 
-    <!-- Compact searchable project explorer -->
+    <!-- Projects are loaded from the public GitHub profile README table. -->
     <section id="project-overview" class="project-overview-section" aria-labelledby="overview-title">
         <div class="overview-heading">
             <span class="overview-eyebrow">Portfolio at a glance</span>
             <h2 id="overview-title">Explore My Projects</h2>
-            <p>Filter by category. Hover over a project for a quick summary.</p>
+            <p>Filter by category or search for a project.</p>
         </div>
-
         <div class="overview-toolbar">
-            <div class="overview-category-list" role="group" aria-label="Filter projects by category">
+            <div class="overview-category-list" id="overview-category-list" role="group" aria-label="Filter projects by category">
                 <button class="overview-category active" type="button" data-overview-category="All" aria-pressed="true">All Projects</button>
-                <button class="overview-category" type="button" data-overview-category="Machine Learning" aria-pressed="false">Machine Learning</button>
-                <button class="overview-category" type="button" data-overview-category="Power BI" aria-pressed="false">Power BI</button>
-                <button class="overview-category" type="button" data-overview-category="Python" aria-pressed="false">Python</button>
-                <button class="overview-category" type="button" data-overview-category="Excel" aria-pressed="false">Excel</button>
-                <button class="overview-category" type="button" data-overview-category="SQL" aria-pressed="false">SQL</button>
-                <button class="overview-category" type="button" data-overview-category="Data Engineering" aria-pressed="false">Data Engineering</button>
             </div>
             <label class="overview-search">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <input id="overview-search-input" type="search" placeholder="Search projects..." aria-label="Search projects or tools">
+                <input id="overview-search-input" type="search" placeholder="Search projects..." aria-label="Search projects">
                 <button id="overview-search-clear" type="button" aria-label="Clear search" hidden>&times;</button>
             </label>
         </div>
-
         <div class="overview-list-heading">
             <h3>Projects</h3>
-            <span id="overview-results" aria-live="polite">8 projects</span>
+            <span id="overview-results" aria-live="polite">Loading projects...</span>
         </div>
         <div class="overview-project-panel">
-            <div class="overview-project-grid" id="overview-project-grid">
-                <article class="overview-project-card" data-project-category="Machine Learning" data-search="Transaction analysis and classification for fraud detection. Tools: Python, Pandas, Scikit-learn." title="Transaction analysis and classification for fraud detection. Tools: Python, Pandas, Scikit-learn.">
-                    <span class="overview-tag">MACHINE LEARNING</span>
-                    <h3>Credit Card Fraud Detection</h3>
-                    <a href="https://github.com/mohanraj-official/Machine_Learning-Credit-Card-Fraud-Detection" target="_blank" rel="noopener noreferrer" aria-label="Open Credit Card Fraud Detection on GitHub" title="Open GitHub repository">GitHub <span aria-hidden="true">↗</span></a>
-                </article>
-                <article class="overview-project-card" data-project-category="Power BI" data-search="Loan performance, risk indicators, and business metrics. Tools: Power BI, DAX, data modeling." title="Loan performance, risk indicators, and business metrics. Tools: Power BI, DAX, data modeling.">
-                    <span class="overview-tag">POWER BI</span>
-                    <h3>Bank Loan Performance Analysis</h3>
-                    <a href="https://github.com/mohanraj-official/PowerBI-Bank_loan_Performance_Analysis" target="_blank" rel="noopener noreferrer" aria-label="Open Bank Loan Performance Analysis on GitHub" title="Open GitHub repository">GitHub <span aria-hidden="true">↗</span></a>
-                </article>
-                <article class="overview-project-card" data-project-category="Python" data-search="Customer responses and campaign segments. Tools: Python, Pandas, exploratory data analysis." title="Customer responses and campaign segments. Tools: Python, Pandas, exploratory data analysis.">
-                    <span class="overview-tag">PYTHON</span>
-                    <h3>Marketing Campaign Insights</h3>
-                    <a href="https://github.com/mohanraj-official/Python---Marketing-Campaign-Performance-Insights" target="_blank" rel="noopener noreferrer" aria-label="Open Marketing Campaign Insights on GitHub" title="Open GitHub repository">GitHub <span aria-hidden="true">↗</span></a>
-                </article>
-                <article class="overview-project-card" data-project-category="Excel" data-search="Healthcare data cleaning and reporting. Tools: Excel, data cleaning, reporting." title="Healthcare data cleaning and reporting. Tools: Excel, data cleaning, reporting.">
-                    <span class="overview-tag">EXCEL</span>
-                    <h3>Healthcare Data Analysis</h3>
-                    <a href="https://github.com/mohanraj-official/Excel-Medical_Healthcare_Analysis" target="_blank" rel="noopener noreferrer" aria-label="Open Healthcare Data Analysis on GitHub" title="Open GitHub repository">GitHub <span aria-hidden="true">↗</span></a>
-                </article>
-                <article class="overview-project-card" data-project-category="SQL" data-search="Churn patterns and retention factors. Tools: MySQL, SQL, customer analytics." title="Churn patterns and retention factors. Tools: MySQL, SQL, customer analytics.">
-                    <span class="overview-tag">SQL</span>
-                    <h3>E-Commerce Customer Churn</h3>
-                    <a href="https://github.com/mohanraj-official/MySQL-E-Commerce_Customer_churn_Analysis" target="_blank" rel="noopener noreferrer" aria-label="Open E-Commerce Customer Churn on GitHub" title="Open GitHub repository">GitHub <span aria-hidden="true">↗</span></a>
-                </article>
-                <article class="overview-project-card" data-project-category="Power BI" data-search="Social performance metrics and API-driven reporting. Tools: Power BI, API workflow, visualization." title="Social performance metrics and API-driven reporting. Tools: Power BI, API workflow, visualization.">
-                    <span class="overview-tag">POWER BI</span>
-                    <h3>Instagram Performance Dashboard</h3>
-                    <a href="https://github.com/mohanraj-official/InstaScope" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram Performance Dashboard on GitHub" title="Open GitHub repository">GitHub <span aria-hidden="true">↗</span></a>
-                </article>
-                <article class="overview-project-card" data-project-category="Machine Learning" data-search="Exploratory analysis and classification model building. Tools: Python, Pandas, Scikit-learn." title="Exploratory analysis and classification model building. Tools: Python, Pandas, Scikit-learn.">
-                    <span class="overview-tag">MACHINE LEARNING</span>
-                    <h3>Heart Health Prediction</h3>
-                    <a href="https://github.com/mohanraj-official/heart_predict" target="_blank" rel="noopener noreferrer" aria-label="Open Heart Health Prediction on GitHub" title="Open GitHub repository">GitHub <span aria-hidden="true">↗</span></a>
-                </article>
-                <article class="overview-project-card overview-planned-card" data-project-category="Data Engineering" data-search="Planned portfolio build: ingestion, transformations, data-quality checks, orchestration. ETL ELT" title="Planned build: ingestion, transformations, data-quality checks, and orchestration.">
-                    <span class="overview-tag">DATA ENGINEERING</span>
-                    <h3>End-to-End Data Pipeline</h3>
-                    <span class="overview-coming-soon" title="This project is planned and not yet published">In progress</span>
-                </article>
-            </div>
-            <p class="overview-no-results" id="overview-no-results" hidden>No projects match your search. Try another keyword or category.</p>
+            <div class="overview-project-grid" id="overview-project-grid" aria-live="polite"></div>
+            <p class="overview-no-results" id="overview-no-results" hidden>No projects match your search.</p>
+            <p class="overview-sync-error" id="overview-sync-error" role="status" hidden>Projects could not be loaded. <a href="https://github.com/mohanraj-official" target="_blank" rel="noopener noreferrer">View repositories on GitHub</a>.</p>
         </div>
-        <div class="overview-footer"><span>Select a project to open its repository.</span><a href="https://github.com/mohanraj-official" target="_blank" rel="noopener noreferrer">Browse all GitHub repositories ↗</a></div>
+        <div class="overview-footer"><span>Projects from my GitHub profile.</span><a href="https://github.com/mohanraj-official" target="_blank" rel="noopener noreferrer">Browse all GitHub repositories ↗</a></div>
     </section>
 
     <!-- About Section-->
