@@ -1261,3 +1261,17 @@ footer {
 .overview-project-card:hover{transform:translateY(-2px);box-shadow:0 7px 20px rgba(0,0,0,.14);}
 @media(max-width:900px){.overview-project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:560px){.overview-project-grid{grid-template-columns:1fr;}.overview-project-card{min-height:80px;}}
+
+/* GitHub README-driven project categories */
+.overview-project-card[data-project-category="AI Assistant"]{border-left-color:#a78bfa}
+.overview-project-card[data-project-category="AI Assistant"] .overview-tag{color:#c4b5fd;background:rgba(139,92,246,.12);border-color:rgba(167,139,250,.35)}
+.overview-project-card[data-project-category="Pipeline"]{border-left-color:#48c6cf}
+.overview-project-card[data-project-category="Pipeline"] .overview-tag{color:#81e1e5;background:rgba(72,198,207,.1);border-color:rgba(72,198,207,.32)}
+.overview-project-card[data-project-category="Data Analysis"]{border-left-color:#f2c94c}
+.overview-project-card[data-project-category="Data Analysis"] .overview-tag{color:#f5d76e;background:rgba(242,201,76,.1);border-color:rgba(242,201,76,.32)}
+.overview-project-card[data-project-category="Others"]{border-left-color:#46b881}
+.overview-project-card[data-project-category="Others"] .overview-tag{color:#7ce0ae;background:rgba(70,184,129,.1);border-color:rgba(70,184,129,.32)}
+.overview-project-card.overview-planned-card{border-style:dashed;background:rgba(28,34,43,.75)}
+.overview-sync-error{padding:24px 12px;text-align:center;color:#aebed1;font-size:.88rem}
+.overview-sync-error a{color:#bae6fd}
+.overview-sync-error[hidden]{display:none!important}
