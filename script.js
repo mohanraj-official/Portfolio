@@ -202,49 +202,154 @@ function renderFriends(friends) {
 renderFriends(sampleFriends);
 
 
-// Compact project explorer: category filters + live search
+// Project explorer: the GitHub profile README table is the single source of truth.
 (function () {
-  const categoryButtons = [...document.querySelectorAll('[data-overview-category]')];
-  const projectCards = [...document.querySelectorAll('#overview-project-grid [data-project-category]')];
-  const resultsLabel = document.getElementById('overview-results');
-  const searchInput = document.getElementById('overview-search-input');
-  const clearButton = document.getElementById('overview-search-clear');
-  const noResults = document.getElementById('overview-no-results');
-  if (!categoryButtons.length || !projectCards.length) return;
+  const owner = 'mohanraj-official';
+  const readmeUrl = 'https://raw.githubusercontent.com/' + owner + '/' + owner + '/main/README.md';
+  const grid = document.getElementById('overview-project-grid');
+  const categories = document.getElementById('overview-category-list');
+  const results = document.getElementById('overview-results');
+  const search = document.getElementById('overview-search-input');
+  const clear = document.getElementById('overview-search-clear');
+  const empty = document.getElementById('overview-no-results');
+  const error = document.getElementById('overview-sync-error');
+  if (!grid || !categories || !results) return;
 
-  let selectedCategory = 'All';
-  function updateProjects() {
-    const query = (searchInput?.value || '').trim().toLowerCase();
-    let visibleCount = 0;
-    projectCards.forEach(card => {
-      const categoryMatch = selectedCategory === 'All' || card.dataset.projectCategory === selectedCategory;
-      const searchableText = (card.textContent + ' ' + (card.dataset.search || '') + ' ' + (card.getAttribute('title') || '')).toLowerCase();
-      const textMatch = !query || searchableText.includes(query);
-      const visible = categoryMatch && textMatch;
-      card.hidden = !visible;
-      if (visible) visibleCount++;
-    });
-    if (resultsLabel) {
-      resultsLabel.textContent = visibleCount + ' project' + (visibleCount === 1 ? '' : 's');
+  let selected = 'All';
+  let projects = [];
+
+  function parseTable(markdown) {
+    const lines = markdown.split(/\r?\n/);
+    const headerIndex = lines.findIndex(line =>
+      /^\s*\|/.test(line) && /\bAI Assistant\b/i.test(line) &&
+      /\bData Analysis\b/i.test(line) && /\bPipeline\b/i.test(line)
+    );
+    if (headerIndex < 0) throw new Error('Project table not found');
+    const cells = line => line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(cell => cell.trim());
+    const headers = cells(lines[headerIndex]).map(name => name.replace(/\s*\(ML\)\s*$/i, '').trim());
+    const separator = lines[headerIndex + 1] || '';
+    if (!/^\s*\|[\s:|-]+\|\s*$/.test(separator)) throw new Error('Invalid table header');
+
+    const items = [];
+    const seen = new Set();
+    for (let i = headerIndex + 2; i < lines.length && /^\s*\|/.test(lines[i]); i++) {
+      const row = cells(lines[i]);
+      headers.forEach((category, column) => {
+        const cell = row[column] || '';
+        const links = /\[([^\]]+)\]\((https:\/\/github\.com\/[^)\s]+)\)/g;
+        let match, foundLink = false;
+        while ((match = links.exec(cell))) {
+          const title = match[1].trim();
+          const url = match[2];
+          let parsed;
+          try { parsed = new URL(url); } catch (_) { continue; }
+          const segments = parsed.pathname.split('/').filter(Boolean);
+          if (parsed.hostname !== 'github.com' || segments.length !== 2 ||
+              segments[0].toLowerCase() !== owner || !title || seen.has(url.toLowerCase())) continue;
+          seen.add(url.toLowerCase());
+          items.push({ title, category, url });
+          foundLink = true;
+        }
+        // Plain text in the table is shown as a planned project without a broken link.
+        if (!foundLink && cell && !/[<>\[\]]/.test(cell)) {
+          items.push({ title: cell.replace(/\*\*/g, ''), category, url: '' });
+        }
+      });
     }
-    if (noResults) noResults.hidden = visibleCount > 0;
-    if (clearButton) clearButton.hidden = !query;
+    if (!items.length) throw new Error('No projects in table');
+    return { headers, items };
   }
 
-  categoryButtons.forEach(button => button.addEventListener('click', () => {
-    selectedCategory = button.dataset.overviewCategory;
-    categoryButtons.forEach(item => {
-      const active = item === button;
-      item.classList.toggle('active', active);
-      item.setAttribute('aria-pressed', String(active));
+  function addCard(project) {
+    const card = document.createElement('article');
+    card.className = 'overview-project-card';
+    card.dataset.projectCategory = project.category;
+    card.title = project.title + ' · ' + project.category;
+    const tag = document.createElement('span');
+    tag.className = 'overview-tag';
+    tag.textContent = project.category.toUpperCase();
+    const heading = document.createElement('h3');
+    heading.textContent = project.title;
+    card.append(tag, heading);
+    if (project.url) {
+      const link = document.createElement('a');
+      link.href = project.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', 'Open ' + project.title + ' on GitHub');
+      link.textContent = 'GitHub ↗';
+      card.append(link);
+    } else {
+      card.classList.add('overview-planned-card');
+      const status = document.createElement('span');
+      status.className = 'overview-coming-soon';
+      status.textContent = 'Coming soon';
+      card.append(status);
+    }
+    grid.append(card);
+  }
+
+  function update() {
+    const query = (search?.value || '').trim().toLowerCase();
+    let count = 0;
+    [...grid.children].forEach(card => {
+      const matched = (selected === 'All' || card.dataset.projectCategory === selected) &&
+        (!query || (card.textContent + ' ' + card.title).toLowerCase().includes(query));
+      card.hidden = !matched;
+      if (matched) count++;
     });
-    updateProjects();
-  }));
-  if (searchInput) searchInput.addEventListener('input', updateProjects);
-  if (clearButton) clearButton.addEventListener('click', () => {
-    searchInput.value = '';
-    searchInput.focus();
-    updateProjects();
+    results.textContent = count + ' project' + (count === 1 ? '' : 's');
+    if (empty) empty.hidden = count > 0;
+    if (clear) clear.hidden = !query;
+  }
+
+  function selectCategory(category) {
+    selected = category;
+    categories.querySelectorAll('button').forEach(button => {
+      const active = button.dataset.overviewCategory === category;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    update();
+  }
+
+  categories.addEventListener('click', event => {
+    const button = event.target.closest('[data-overview-category]');
+    if (button) selectCategory(button.dataset.overviewCategory);
   });
-  updateProjects();
+  search?.addEventListener('input', update);
+  clear?.addEventListener('click', () => {
+    search.value = '';
+    search.focus();
+    update();
+  });
+
+  fetch(readmeUrl, { cache: 'no-cache' })
+    .then(response => {
+      if (!response.ok) throw new Error('GitHub returned ' + response.status);
+      return response.text();
+    })
+    .then(markdown => {
+      const data = parseTable(markdown);
+      projects = data.items;
+      categories.replaceChildren();
+      ['All', ...data.headers].forEach(category => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'overview-category';
+        button.dataset.overviewCategory = category;
+        button.textContent = category === 'All' ? 'All Projects' : category;
+        categories.append(button);
+      });
+      grid.replaceChildren();
+      projects.forEach(addCard);
+      if (error) error.hidden = true;
+      selectCategory('All');
+    })
+    .catch(err => {
+      console.warn('Unable to load project table:', err);
+      results.textContent = 'Projects unavailable';
+      if (error) error.hidden = false;
+      if (empty) empty.hidden = true;
+    });
 })();
