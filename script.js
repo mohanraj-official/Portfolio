@@ -160,7 +160,7 @@ const sampleFriends = [
     role: '"Data Analyst"',
     message: "Watch 'Dark' Series",
     photo: "./assets/avatar/a1.jpg",
-    link: "https://github.com/rajannnnnnn"
+    link: "https://nrajan.in/"
   },
   {
     name: "Rajkumar",
